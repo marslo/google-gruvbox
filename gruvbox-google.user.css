@@ -1,12 +1,11 @@
 /* ==UserStyle==
-@name           Gruvbox-Google
-@namespace      github.com/touhidulshawan
-@version        1.0
-@description    Gruvbox dark theme for google search page
+@name           Gruvbox-Google ( marslo )
+@version        1.0.2
+@description    Gruvbox dark theme for google search and translate
 @preprocessor   stylus
-@author         Touhidul Shawan
-@homepageURL    https://github.com/touhidulshawan/gruvbox-google
-@license        MIT
+@author         Touhidul Shawan ( Google Search ); Marslo Jiao ( Google Translate )
+@homepageURL    https://github.com/marslo/styles-gruvbox-google
+@inheredFrom    https://github.com/touhidulshawan/gruvbox-google
 ==/UserStyle== */
 
 @-moz-document domain("www.google.com")
@@ -15,13 +14,14 @@
     --bg-secondary: #1d2021;
     --comment: #32302f;
     --red: #cc241d;
-    --green: #98971a;
     --yellow: #d79921;
     --blue: #458588;
     --magenta: #b16286;
     --cyan: #689d6a;
     --orange: #d65d0e;
     --fg-primary: #d5c4a1;
+    --font-family-sans: "Ubuntu", "Gisha", "Titillium";
+    --font-family-mono: "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur";
 
   body,
   #hdtbSum,
@@ -87,6 +87,11 @@
     color: var(--fg-primary);
     border: 1px solid var(--cyan);
     border-radius: 0px !important;
+    font-family: var(--font-family-mono) !important;
+
+  textarea.gLFyf,
+  .YacQv
+    font-family: var(--font-family-mono) !important;
 
   .SDkEP
     background: var(--bg-primary) !important;
@@ -227,3 +232,233 @@
     background: var(--orange) !important;
     color: var(--comment) !important;
     border: 1px solid var(--orange) !important;
+
+@-moz-document url-prefix("https://translate.google.")
+  html
+    --bg-primary: #282828;
+    --bg-secondary: #1d2021;
+    --bg-third: #645c54;
+    --comment: #32302f;
+    --red: #cc241d;
+    --green: #98971a;
+    --yellow: #d79921;
+    --blue: #458588;
+    --magenta: #b16286;
+    --cyan: #689d6a;
+    --orange: #d65d0e;
+    --fg-primary: #d5c4a1;
+    --hints: #af8d11;
+    --font-family-sans: "Ubuntu", "Gisha", "Titillium" !important;
+    --font-family-mono: "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur" !important;
+
+
+  *:before,
+  *:after {
+    display: none;
+  }
+
+  body,
+  .jTj8gd.XzOhkf .a2Icud,
+  #gb,
+  .gb_qa .gb_Kd.gb_Sd.gb_Td,
+  .RvYhPd.Q5Onnd,
+  .RvYhPd.dtohSe,
+  .RvYhPd::before,
+  .frame,
+  .ita-hwt-jfk-standard,
+  .history-top-header .history-top-bar,
+  .history-container .info-bar,
+  .phrasebook-top-header,
+  .phrasebook-container .nav-bar,
+  .gb_fd .gb_F,
+  .gb_3d,
+  .RvYhPd,
+  .MmZJl,
+  .aCQag,
+  .ccvoYb,
+  .WFnNle,
+  .I87fLc.XzOhkf,
+  .ySES5,
+  .myVd4c .ySES5,
+  .yFQBKb,
+  .kXN2zb,
+  .kiSRoe,
+  .eYhTcb,
+  .LpQB8e,
+  .NdeSHd,
+  .AzKM4,
+  .B3AePc,
+  .rJfKsc,
+  .KskmCc,
+  .EO28P,
+  .KjuTac,
+  .DNFg3e
+    background: var(--bg-primary) !important;
+    color: var(--fg-primary) !important;
+
+     /** language button **/
+/**
+ *   .kgJkHd,
+ *   .Rq5Gcb,
+ *   .vk-btn.vk-sf-h,
+ *   .vk-btn.vk-sf-a,
+ *   .JJYS0b:hover .VfPpkd-jY41G-V67aGc,
+ *   .tAzJq:hover,
+ *   .S6GkK,
+ *   .kgnlhe.FwR7Pc,
+ *   .MtFg0.FwR7Pc,
+ *   .G3Fn7c,
+ *   .VfPpkd-AznF2e .VfPpkd-YVzG2b
+ *     color: var(--green) !important;
+ *
+ *   .VfPpkd-AznF2e .VfPpkd-YVzG2b::after,
+ *   .VfPpkd-AznF2e .VfPpkd-YVzG2b::before
+ *     background-color: var(--green) !important;
+**/
+
+
+  /** textarea>text **/
+  .er8xn,
+  .J0lOec
+    color: var(--fg-primary) !important;
+
+  /** textarea>button-selection **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button span
+    color: var(--fg-primary) !important;
+
+  /** textarea>button-ripple **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button span:before,
+  .VfPpkd-AznF2e-LUERP-bN97Pc button span:after
+    display: none;
+
+
+  /** textarea>button-font:hover **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button:hover span
+    color: var(--green) !important;
+    background-color: var(--comment) !important;
+
+  /** textarea>button-selected **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc .VfPpkd-AznF2e-OWXEXe-auswjd,
+  /**textarea>button:active **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button:active,
+  /** textarea>button-font:active **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button:active span
+    background-color: var(--comment) !important;
+
+  /** textarea>header>scroll-fade **/
+  .X4DQ0:after
+    background: linear-gradient(to right, transparant, var(--foreground-color));
+
+
+  /** text box **/
+  .GAyS9e,
+  .Pt010b .a2Icud,
+  .SMqeCb,
+  .DLAnyc,
+  .gb_rb.gb_rb,
+  .UxtXRb,
+  .ZwgMLb,
+  .k5v5Nb,
+  .rm1UF,
+  .P6w8m:not(.BDJ8fb):not(.Jj6Lae),
+  .ita-kd-dropdown-menu,
+  .vk-box,
+  .vk-btn,
+  .ita-hwt-ime,
+  .ita-hwt-buttons,
+  .ita-hwt-candidates,
+  .gb_Ic,
+  .gb_Bc,
+  .dykxn.MeCBDd.j33Gae,
+  .oJweqc.KKjvXb,
+  .QcsUad,
+  .NWlwsb,
+  .CLKk4c
+    background: var(--comment) !important;
+    color: var(--fg-primary) !important;
+    font-family: var(--font-family-mono) !important;
+
+  .X4DQ0::after, .U0xwnf::after
+    background:transparent !important;
+
+  .UdTY9
+    color: var(--hints) !important;
+
+  /** image **/
+  .rlWbvd,
+  .pu3MFc,
+  .uqt39c,
+  .LYeNu
+    background: var(--comment) !important;
+    color: var(--fg-primary) !important;
+
+
+  .ordo2:hover,
+  .ordo2:focus,
+  .vk-btn.vk-sf-a,
+  .tAzJq:hover,
+  .kgnlhe.FwR7Pc,
+  .MtFg0.FwR7Pc,
+  .qSb8Pe:hover,
+  .jCAhz.C1N51c,
+  .jCAhz:hover,
+  .JLqJ4b.C1N51c,
+  .JLqJ4b:hover,
+  .Xcmxjb.FwR7Pc
+    background: var(--comment) !important;
+    color: var(--fg-primary) !important;
+
+
+  .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-TvZj5c-OWXEXe-M1Soyc,
+  .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-TvZj5c-OWXEXe-UbuQg,
+  .uqiNJb,
+  .uqiNJb,
+  .AP34ab,
+  .pt8wXd,
+  .zRANPd:not(:disabled),
+  .q6oraf .VfPpkd-rymPhb,
+  .vxsGZ,
+  .HswdMd,
+  .mTQVx,
+  .ZQWYD,
+  .aWlm2e,
+  .irVajb,
+  .cfWmIb:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
+  .aia4Ud,
+  .ita-kd-menuitem,
+  .vk-btn,
+  .ita-hwt-candidate,
+  .XMNbjd,
+  .VK4HE:hover .dPxysd,
+  .VK4HE:focus .dPxysd,
+  .qTO0c:hover .dPxysd,
+  .qTO0c:focus .dPxysd,
+  .ordo2,
+  .KskmCc,
+  .AarNVd,
+  .MXuJQd,
+  .KmsAmb .tL9Q4c,
+  .uNr6ee,
+  .fEU59c,
+  .v2OCrb,
+  .WFnNle,
+  .qSb8Pe,
+  .NqnNQd,
+  .lRu31,
+  .lrSgmd,
+  .jq25U
+    color: var(--fg-primary) !important;
+
+  button,
+  svg
+    color: var(--blue) !important;
+
+  .U8K5nb
+    background: var(--blue) !important;
+    color: var(--fg-primary) !important;
+    border: 1px solid var(--blue) !important;
+
+  /** More translations **/
+  .ydsGXd
+    background-color: var(--bg-primary) !important;
+    color: var(--green) !important;
