@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           google gruvbox ( marslo )
-@version        1.0.4
+@version        1.0.6
 @namespace      github.com/marslo
 @description    Gruvbox dark theme for google search and translate. inhered from: https://github.com/touhidulshawan/gruvbox-google
 @preprocessor   stylus
@@ -248,8 +248,8 @@
     --orange: #d65d0e;
     --fg-primary: #d5c4a1;
     --hints: #af8d11;
-    --font-family-sans: "Ubuntu", "Gisha", "Titillium" !important;
-    --font-family-mono: "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur" !important;
+    --font-family-sans: "Ubuntu", "Gisha", "Titillium"
+    --font-family-mono: "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur"
 
 
   *:before,
@@ -374,7 +374,6 @@
   .U0xwnf::after
     background: transparent !important;
 
-
   .Bcbxbe.FwR7Pc      /** filter list **/
     background-color: var(--comment) !important;
 
@@ -395,7 +394,6 @@
   .gb_rb.gb_rb,
   .UxtXRb,
   .ZwgMLb,
-  .k5v5Nb,
   .rm1UF,
   .P6w8m:not(.BDJ8fb):not(.Jj6Lae),
   .ita-kd-dropdown-menu,
@@ -414,14 +412,6 @@
     background: var(--comment) !important;
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
-
-  /** image **/
-  .rlWbvd,
-  .pu3MFc,
-  .uqt39c,
-  .LYeNu
-    background: var(--comment) !important;
-    color: var(--fg-primary) !important;
 
   .ordo2:hover,
   .ordo2:focus,
@@ -475,14 +465,19 @@
   .qSb8Pe,
   .NqnNQd,
   .lRu31,
-  .lrSgmd,
-  .jq25U
+  .lrSgmd
     color: var(--fg-primary) !important;
 
   button,
   .VlPnLc svg,     /** footer **/
   .TcXXXb
     color: var(--blue) !important;
+  .ZihNHd.EmpJsc > span > .NMm5M
+    color: var(--hints) !important;
+
+  .eIKIse,                    /** ┐ Noun, Verb, ... **/
+  .jq25U                      /** ┘                 **/
+    color: var(--yellow) !important;
 
   .U8K5nb
     background: var(--blue) !important;
@@ -551,7 +546,33 @@
   span .VfPpkd-YVzG2b::after
     color: var(--green) !important;
 
-  /** website search box **/
+  /** images search **/
+  .D7BEKc:focus-within .CQQi5b
+  .CQQi5b
+    background: var(--green) !important;
+  .FJCnk                /** hr **/
+    border: 1px solid var(--cyan) !important;
+  .q7OsL,               /** board **/
+  .eTNoGb
+    border: none !important;
+  .rlWbvd,
+  .pu3MFc,
+  .uqt39c,
+  .LYeNu,
+  .sp2Bqb
+    background: var(--comment) !important;
+    color: var(--fg-primary) !important;
+  .zXU7Rb
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+
+  /** documents **/
+  .uqt39c,
+  .sp2Bqb,
+  .k5v5Nb
+    font-family: var(--font-family-sans) !important;
+
+  /** website **/
   input#i48                         /** cursor **/
     caret-color: var(--fg-primary) !important;
 
