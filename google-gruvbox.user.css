@@ -223,7 +223,6 @@
     background: var(--bg-primary);
 
   /* button on google.com home */
-
   .gNO89b
     background: var(--blue) !important;
     color: var(--fg-primary) !important;
@@ -292,14 +291,15 @@
   .rJfKsc,
   .KskmCc,
   .EO28P,
-  .KjuTac,
+  .KjuTac,               /** textarea>suggestion-field **/
   .DNFg3e
-    background: var(--bg-primary) !important;
+    background-color: var(--bg-primary) !important;
     color: var(--fg-primary) !important;
 
   /** details page **/
-  .a2Icud
-    background: var(--bg-primary) !important;
+  .a2Icud,
+  .jTj8gd
+    background-color: var(--bg-primary) !important;
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
   .zWtKC,
@@ -326,6 +326,11 @@
    *     background-color: var(--green) !important;
   **/
 
+
+  /** language tab **/
+  .Ose4Jf,
+  .JJYS0b
+    font-family: var(--font-family-sans) !important;
 
   /** textarea>text **/
   .er8xn,
@@ -356,14 +361,31 @@
   .VfPpkd-AznF2e-LUERP-bN97Pc button:active span
     background-color: var(--comment) !important;
 
-  /** textarea>header>scroll-fade **/
-  .X4DQ0:after
-    background: linear-gradient(to right, transparant, var(--foreground-color));
+  /** highlight actived language tab **/
+  .PRdtG .VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb
+  .Ose4Jf.VfPpkd-AznF2e-OWXEXe-auswjd .VfPpkd-jY41G-V67aGc
+    color: var(--green) !important;
+    border-color: var(--green) !important;
 
-  /** filter list **/
-  .Bcbxbe.FwR7Pc
+
+  .X4DQ0:after        /** textarea>header>scroll-fade **/
+    background: linear-gradient(to right, transparant, var(--fg-primary));
+
+  .U0xwnf::after
+    background: transparent !important;
+
+
+  .Bcbxbe.FwR7Pc      /** filter list **/
     background-color: var(--comment) !important;
 
+  .VhOj3e,            /** translate from : **/
+  .ODAbH              /** icon **/
+  .UdTY9              /** 拼音 **/
+    color: var(--hints) !important;
+  .mvqA2c             /** <suggest> Link **/
+    color: var(--green) !important;
+  .NSSM9b             /** Reviewed by contributors **/
+    color: var(--bg-primary) !important;
 
   /** text box **/
   .GAyS9e,
@@ -392,16 +414,6 @@
     background: var(--comment) !important;
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
-
-  .X4DQ0::after, .U0xwnf::after
-    background:transparent !important;
-
-  .UdTY9
-    color: var(--hints) !important;
-
-  /** Reviewed by contributors **/
-  .NSSM9b
-    color: var(--bg-primary) !important;
 
   /** image **/
   .rlWbvd,
@@ -467,7 +479,9 @@
   .jq25U
     color: var(--fg-primary) !important;
 
-  button
+  button,
+  .VlPnLc svg,     /** footer **/
+  .TcXXXb
     color: var(--blue) !important;
 
   .U8K5nb
@@ -510,7 +524,48 @@
   .FvchS
     position: relative;
 
-  /** button of `Text`, `Images`, `Documents`, `Websites` **/
+  /**
+   * button of `Text`, `Images`, `Documents`, `Websites`
+   * can hidden via `.hgbeOc { visibility: hidden; }`
+  **/
+  /* button-group */
   .Rj2Mlf:not(:disabled),
   .gwGW9e
     background-color: var(--fg-primary) !important;
+
+  /** search languages actived **/
+  .qSb8Pe.KKjvXb
+    background-color: var(--bg-primary) !important;
+    color: var(--green) !important;
+
+
+  .a88hkc,          /** feedback-link **/
+  .gHNJvf,          /** voice-input-button **/
+  .nidPne,          /** keyboard-ui-button **/
+  .vNTDhc           /** rate this translate **/
+    display: none
+
+  ::-webkit-scrollbar /** scrollbar **/
+    background-color: var(--bg-secondary) !important;
+
+  span .VfPpkd-YVzG2b::after
+    color: var(--green) !important;
+
+  /** website search box **/
+  input#i48                         /** cursor **/
+    caret-color: var(--fg-primary) !important;
+
+  body#yDmH0d > c-wiz > div > div:nth-child(2) > c-wiz > div:nth-child(4) > c-wiz > div:nth-child(3) > div > span > button:not(:disabled)
+    background-color: var(--fg-primary) !important;
+    color: var(--green) !important;
+
+  .VfPpkd-NLUYnc-V67aGc             /** Website placeholder **/
+    color: var(--fg-primary) !important;
+
+  /** input box boder **/
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-Brv4Fb,
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-Ra9xwd,
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-MpmGFe,
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc
+    border-color: var(--fg-primary) !important;
+    border-color: var(--gm-outlinedtextfield-outline-color--stateful,var(--fg-primary)) !important;
