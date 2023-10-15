@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           google gruvbox ( marslo )
-@version        1.0.8
+@version        1.0.9
 @namespace      github.com/marslo
 @description    Gruvbox dark theme for google search and translate. inhered from: https://github.com/touhidulshawan/gruvbox-google
 @preprocessor   stylus
@@ -23,8 +23,8 @@
     --orange: #d65d0e;
     --fg-primary: #d5c4a1;
     --fg-secondary: #a89984;
-    --font-family-sans: "Ubuntu", "Gisha", "Titillium";
-    --font-family-mono: "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur";
+    --font-family-sans: "Ubuntu", "Candara", "Gisha", "Titillium";
+    --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
 
   body,
   #hdtbSum,
@@ -135,7 +135,7 @@
   .WggQGd
     /** color: var(--magenta) !important; **/
     color: var(--fg-secondary) !important;
-    font-family: var(--font-family-snas) !important;
+    font-family: var(--font-family-sans) !important;
 
   .minidiv .sfbg
     background: var(--bg-secondary);
@@ -259,8 +259,8 @@
     --fg-primary: #d5c4a1;
     --fg-secondary: #a89984;
     --hints: #af8d11;
-    --font-family-sans: "Ubuntu", "Gisha", "Titillium"
-    --font-family-mono: "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur"
+    --font-family-sans: "Ubuntu", "Candara", "Gisha", "Titillium";
+    --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
 
 
   *:before,
