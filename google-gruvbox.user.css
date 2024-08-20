@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           google gruvbox ( marslo )
-@version        1.0.15
+@version        1.0.16
 @namespace      github.com/marslo
 @description    Gruvbox dark theme for google search and translate. inhered from: https://github.com/touhidulshawan/gruvbox-google
 @preprocessor   stylus
@@ -354,6 +354,10 @@
   .j27i7
     border-bottom: 1px solid var(--cyan) !important;
 
+  i[class*="material-icons-"],
+  i[class*="google-material-icons"]
+    font-family: "Google Material Icons", "Material Icons Extended" !important;
+
   /** details page **/
   .a2Icud,
   .jTj8gd
@@ -425,7 +429,6 @@
   .Ose4Jf.VfPpkd-AznF2e-OWXEXe-auswjd .VfPpkd-jY41G-V67aGc
     color: var(--green) !important;
     border-color: var(--green) !important;
-
 
   .X4DQ0:after           /** textarea>header>scroll-fade **/
     background: linear-gradient(to right, transparant, var(--fg-primary));
@@ -532,16 +535,16 @@
 
   button,
   .VlPnLc svg,           /** footer **/
-  .TcXXXb,
-  .EYBmYc                /** history **/
+  .TcXXXb
     color: var(--blue) !important;
+  .EYBmYc                /** history **/
   .kgJkHd                /** saved **/
     color: var(--yellow) !important;
   .ZihNHd.EmpJsc > span > .NMm5M
     color: var(--hints) !important;
 
-  .eIKIse,               /** ┐ Noun, Verb, ... **/
-  .jq25U                 /** ┘                 **/
+  .eIKIse,               /** ╮ Noun, Verb, ... **/
+  .jq25U                 /** ╯                 **/
     color: var(--yellow) !important;
 
   .U8K5nb
