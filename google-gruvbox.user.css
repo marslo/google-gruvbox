@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           google gruvbox ( marslo )
-@version        1.0.16
+@version        1.0.17
 @namespace      github.com/marslo
 @description    Gruvbox dark theme for google search and translate. inhered from: https://github.com/touhidulshawan/gruvbox-google
 @preprocessor   stylus
@@ -23,7 +23,7 @@
     --orange: #d65d0e;
     --fg-primary: #d5c4a1;
     --fg-secondary: #a89984;
-    --font-family-sans: "Recursive Sans Casual Static Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
+    --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas", "monospace";
 
   body,
@@ -303,7 +303,7 @@
     --fg-primary: #d5c4a1;
     --fg-secondary: #a89984;
     --hints: #af8d11;
-    --font-family-sans: "Recursive Sans Casual Static Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
+    --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas", "monospace";
 
   *:before,
@@ -440,7 +440,7 @@
     background-color: var(--comment) !important;
 
   .VhOj3e,               /** translate from : **/
-  .ODAbH                 /** icon **/
+  .ODAbH,                /** icon **/
   .UdTY9                 /** 拼音 **/
     color: var(--hints) !important;
   .mvqA2c                /** <suggest> Link **/
@@ -469,7 +469,6 @@
   .dykxn.MeCBDd.j33Gae,
   .oJweqc.KKjvXb,
   .QcsUad,
-  .NWlwsb,
   .CLKk4c,
   .dykxn,                 /** language seach drop down list **/
   input.yFQBKb,           /** language search input **/
@@ -658,3 +657,46 @@
   .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc
     border-color: var(--fg-primary) !important;
     border-color: var(--gm-outlinedtextfield-outline-color--stateful,var(--fg-primary)) !important;
+
+  /** hover or select sentence **/
+  .WtlSJf:hover,
+  .Xcmxjb.FwR7Pc,
+  .jCAhz.C1N51c,
+  .jCAhz:hover
+    background-color: #4e4947 !important;
+  .NWlwsb
+    background-color: var(--comment) !important;
+    color: var(--fg-primary) !important;
+    font-family: var(--font-family-mono) !important;
+    border: 1px solid #888c;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px 4px #282828 !important;
+  .WtlSJf.KKjvXb
+    background-color: var(--bg-third) !important;
+
+  /** see dictionary **/
+  .yP8PRe
+    color: var(--cyan) !important;
+  .AzGRq.VfPpkd-StrnGf-rymPhb-ibnC6b
+    border: 1px solid #888c;
+    border-radius: 2px;
+
+  /** background color after click **/
+  span.jCAhz.ChMk0b.C1N51c
+    background-color: #4e4947 !important;
+
+  .rm1UF,
+  .QcsUad
+    border: 1px solid var(--bg-primary);
+    border-radius: 8px;
+    box-shadow: inset 0 0 3px 2px var(--comment) !important;
+
+  /** settings **/
+  .VfPpkd-xl07Ob-XxIAqe
+    color: #ccc;
+    background-color: var(--comment) !important;
+    border: 1px solid var(--bg-primary) !important;
+  .pWIpbc,
+  .Jp7KKb,
+  .XOPM0
+    color: var(--fg-primary);
