@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           google gruvbox ( marslo )
-@version        1.0.17
+@version        1.0.18
 @namespace      github.com/marslo
 @description    Gruvbox dark theme for google search and translate. inhered from: https://github.com/touhidulshawan/gruvbox-google
 @preprocessor   stylus
@@ -469,6 +469,7 @@
   .dykxn.MeCBDd.j33Gae,
   .oJweqc.KKjvXb,
   .QcsUad,
+  .rm1UF,
   .CLKk4c,
   .dykxn,                 /** language seach drop down list **/
   input.yFQBKb,           /** language search input **/
@@ -685,10 +686,12 @@
   span.jCAhz.ChMk0b.C1N51c
     background-color: #4e4947 !important;
 
+  .s0ijVb
+    background-color: var(--bg-primary) !important;
   .rm1UF,
   .QcsUad
     border: 1px solid var(--bg-primary);
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: inset 0 0 3px 2px var(--comment) !important;
 
   /** settings **/
@@ -700,3 +703,21 @@
   .Jp7KKb,
   .XOPM0
     color: var(--fg-primary);
+
+  /** expand all/collapse all **/
+ .qt6jm
+    border-top: 2px solid;
+    justify-content: flex-end;
+    padding: 0 16px;
+    background-color: var(--comment) !important;
+    border-radius: 8px;
+  .hX7wnb
+    background-color: var(--bg-primary) !important;
+
+  /** google menu **/
+  .gb_Ea:not(.gb_bc) .gb_1c>*
+    background-color: var(--bg-primary) !important;
+  .gb_Vc .gb_Qc
+    background-color: var(--bg-primary);
+    color: var(--fg-primary);
+    font-family: var(--font-family-sans);
