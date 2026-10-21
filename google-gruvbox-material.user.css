@@ -3,59 +3,46 @@
 @version        2.0.0
 @namespace      github.com/marslo
 @description    gruvbox-material ( dark / light × hard / medium / soft ) theme for google search and translate. inherited from: https://github.com/touhidulshawan/gruvbox-google
-@preprocessor   stylus
-@author         Touhidul Shawan ( Google Search ); Marslo Jiao ( Google Translate )
+@preprocessor   uso
+@author         Marslo Jiao
 @homepageURL    https://github.com/marslo/google-gruvbox
 @updateURL      https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox-material.user.css
 @var select     palette "Palette" {
-  "Dark Hard*": "'dark-hard'",
-  "Dark Medium": "'dark-medium'",
-  "Dark Soft": "'dark-soft'",
-  "Light Hard": "'light-hard'",
-  "Light Medium": "'light-medium'",
-  "Light Soft": "'light-soft'"
+  "Dark Hard*": "html:root { --gruv-palette: dark-hard; }",
+  "Dark Medium": "html:root { --gruv-palette: dark-medium; --bg-primary: #282828; --bg-secondary: #1b1b1b; --bg-third: #45403d; --bg-hover: #5a524c; --comment: #32302f; }",
+  "Dark Soft": "html:root { --gruv-palette: dark-soft; --bg-primary: #32302f; --bg-secondary: #252423; --bg-third: #504945; --bg-hover: #665c54; --comment: #3c3836; }",
+  "Light Hard": "html:root { --gruv-palette: light-hard; color-scheme: light; --bg-primary: #f9f5d7; --bg-secondary: #f3eac7; --bg-third: #f2e5bc; --bg-hover: #ebdbb2; --comment: #f5edca; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #ebdbb2; --icon-filter: none; }",
+  "Light Medium": "html:root { --gruv-palette: light-medium; color-scheme: light; --bg-primary: #fbf1c7; --bg-secondary: #f2e5bc; --bg-third: #eee0b7; --bg-hover: #ddccab; --comment: #f4e8be; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #ddccab; --icon-filter: none; }",
+  "Light Soft": "html:root { --gruv-palette: light-soft; color-scheme: light; --bg-primary: #f2e5bc; --bg-secondary: #ebdbb2; --bg-third: #e6d5ae; --bg-hover: #d5c4a1; --comment: #eddeb5; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #d5c4a1; --icon-filter: none; }"
 }
 ==/UserStyle== */
-// ── gruvbox-material palettes, foreground `material`: https://github.com/sainnhe/gruvbox-material/blob/master/autoload/gruvbox_material.vim
-palette ?= 'dark-hard'
-palettes = {
-  'dark-hard': { bg_dim: #141617, bg0: #1d2021, bg1: #282828, bg3: #3c3836, bg5: #504945, scheme: dark, fg0: #d4be98, grey2: #a89984, red: #ea6962, orange: #e78a4e, yellow: #d8a657, green: #a9b665, aqua: #89b482, blue: #7daea3, purple: #d3869b, chip: #d4be98, icon_filter: unquote('invert(1)') },
-  'dark-medium': { bg_dim: #1b1b1b, bg0: #282828, bg1: #32302f, bg3: #45403d, bg5: #5a524c, scheme: dark, fg0: #d4be98, grey2: #a89984, red: #ea6962, orange: #e78a4e, yellow: #d8a657, green: #a9b665, aqua: #89b482, blue: #7daea3, purple: #d3869b, chip: #d4be98, icon_filter: unquote('invert(1)') },
-  'dark-soft': { bg_dim: #252423, bg0: #32302f, bg1: #3c3836, bg3: #504945, bg5: #665c54, scheme: dark, fg0: #d4be98, grey2: #a89984, red: #ea6962, orange: #e78a4e, yellow: #d8a657, green: #a9b665, aqua: #89b482, blue: #7daea3, purple: #d3869b, chip: #d4be98, icon_filter: unquote('invert(1)') },
-  'light-hard': { bg_dim: #f3eac7, bg0: #f9f5d7, bg1: #f5edca, bg3: #f2e5bc, bg5: #ebdbb2, scheme: light, fg0: #654735, grey2: #7c6f64, red: #c14a4a, orange: #c35e0a, yellow: #b47109, green: #6c782e, aqua: #4c7a5d, blue: #45707a, purple: #945e80, chip: #ebdbb2, icon_filter: unquote('none') },
-  'light-medium': { bg_dim: #f2e5bc, bg0: #fbf1c7, bg1: #f4e8be, bg3: #eee0b7, bg5: #ddccab, scheme: light, fg0: #654735, grey2: #7c6f64, red: #c14a4a, orange: #c35e0a, yellow: #b47109, green: #6c782e, aqua: #4c7a5d, blue: #45707a, purple: #945e80, chip: #ddccab, icon_filter: unquote('none') },
-  'light-soft': { bg_dim: #ebdbb2, bg0: #f2e5bc, bg1: #eddeb5, bg3: #e6d5ae, bg5: #d5c4a1, scheme: light, fg0: #654735, grey2: #7c6f64, red: #c14a4a, orange: #c35e0a, yellow: #b47109, green: #6c782e, aqua: #4c7a5d, blue: #45707a, purple: #945e80, chip: #d5c4a1, icon_filter: unquote('none') }
-}
 
-// map the selected palette onto the variables used by the rules below
-gruv-palette()
-  p = palettes[palette]
-  color-scheme: p.scheme
-  --bg-primary: p.bg0
-  --bg-secondary: p.bg_dim
-  --bg-third: p.bg3
-  --bg-hover: p.bg5
-  --comment: p.bg1
-  --fg-primary: p.fg0
-  --fg-secondary: p.grey2
-  --red: p.red
-  --green: p.green
-  --yellow: p.yellow
-  --blue: p.blue
-  --magenta: p.purple
-  --cyan: p.aqua
-  --orange: p.orange
-  --hints: unquote('color-mix(in srgb, var(--yellow) 80%, var(--fg-secondary))')
-  --on-accent: var(--bg-primary)
-  --chip-bg: p.chip
-  --icon-filter: p.icon_filter
-
-
-@-moz-document domain("www.google.com")
-  html
-    gruv-palette()
+@-moz-document domain("www.google.com") {
+  html {
+    color-scheme: dark;
+    --bg-primary: #1d2021;
+    --bg-secondary: #141617;
+    --bg-third: #3c3836;
+    --bg-hover: #504945;
+    --comment: #282828;
+    --fg-primary: #d4be98;
+    --fg-secondary: #a89984;
+    --red: #ea6962;
+    --green: #a9b665;
+    --yellow: #d8a657;
+    --blue: #7daea3;
+    --magenta: #d3869b;
+    --cyan: #89b482;
+    --orange: #e78a4e;
+    --hints: color-mix(in srgb, var(--yellow) 80%, var(--fg-secondary));
+    --on-accent: var(--bg-primary);
+    --chip-bg: #d4be98;
+    --icon-filter: invert(1);
     --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font";
+  }
+  /* gruvbox-material, foreground `material`: `dark` + `hard` above, other palettes via `@var select palette` ( https://github.com/sainnhe/gruvbox-material/blob/master/autoload/gruvbox_material.vim ) */
+  /*[[palette]]*/
 
   body,
   #hdtbSum,
@@ -70,15 +57,17 @@ gruv-palette()
   .jloFI,
   .EIJn2,
   .OZ9ddf .Fzsovc,
-  #fbar
-  #pTwnEc
-  .sfbg
+  #fbar,
+  #pTwnEc,
+  .sfbg {
     background: var(--bg-primary) !important;
     color: var(--fg-primary) !important;
+  }
 
   code,
-  textarea
+  textarea {
     font-family: var(--font-family-mono) !important;
+  }
 
 
   a:link,
@@ -98,50 +87,58 @@ gruv-palette()
   .mblink b,
   .i3LlFf,
   .kno-ecr-pt,
-  .w8qArf .fl
+  .w8qArf .fl {
     color: var(--blue) !important;
+  }
 
 
   .mblink:visited,
-  a:visited
+  a:visited {
     color: var(--magenta) !important;
+  }
 
 
   .cv2VAd,
   .kp-blk,
   #fbar,
-  .WwiUwd
+  .WwiUwd {
     background: var(--bg-secondary);
     border-color: var(--comment);
+  }
 
   .gLFyf,
   .i29hTd .qLLird,
   .sbct:first-child .suggestions-inner-container,
-  .RNNXgb
+  .RNNXgb {
     color: var(--fg-primary);
+  }
 
 
   .aajZCb,
   .sbl1,
   .RNNXgb,
-  .sbhl
+  .sbhl {
     background: var(--bg-primary);
     border-radius: 24px !important;
     border: 1px solid var(--cyan);
     color: var(--fg-primary);
     font-family: var(--font-family-mono) !important;
+  }
 
-  .RNNXgb:hover
+  .RNNXgb:hover {
     background: var(--bg-third);
     border: 1px solid var(--cyan);
+  }
 
   textarea.gLFyf,
   .YacQv,
-  #result-stats
+  #result-stats {
     font-family: var(--font-family-mono) !important;
+  }
 
-  .SDkEP
-    color: var(--fg-primary) !important
+  .SDkEP {
+    color: var(--fg-primary) !important;
+  }
 
   /*
   .SDkEP
@@ -149,43 +146,52 @@ gruv-palette()
     background: var(--bg-primary);
   */
 
-  .ExCKkf > svg
+  .ExCKkf > svg {
     color: var(--red);
+  }
 
-  .QCzoEc > svg
+  .QCzoEc > svg {
     color: var(--cyan);
+  }
 
-  .zgAlFc > span > svg
+  .zgAlFc > span > svg {
     color: var(--orange);
+  }
 
 
-  .k8XOCe
-  .R0xfCb
-  .VCOFK
-  .s8bAkb
+  .k8XOCe,
+  .R0xfCb,
+  .VCOFK,
+  .s8bAkb {
     background: var(--bg-primary);
+  }
 
-  .s75CSd
-  .OhScic
-  .AB4Wff
+  .s75CSd,
+  .OhScic,
+  .AB4Wff {
     color: var(--cyan);
+  }
 
-  .sbct:hover
+  .sbct:hover {
     border: none !important;
     background: var(--comment);
     cursor: pointer;
+  }
 
-  .JCHpcb
+  .JCHpcb {
     color: var(--red) !important;
+  }
 
-  .wM6W7d
-  .WggQGd
+  .wM6W7d,
+  .WggQGd {
     /** color: var(--magenta) !important; **/
     color: var(--fg-secondary) !important;
     font-family: var(--font-family-sans) !important;
+  }
 
-  .minidiv .sfbg
+  .minidiv .sfbg {
     background: var(--bg-secondary);
+  }
 
   .g,
   .ssJ7i,
@@ -203,31 +209,37 @@ gruv-palette()
   .YmvwI,                                              /* navigator: All | Images | Shopping | ... */
   .FMKtTb, .Lu57id,
   .IFnjPb, .CSkcDe, .related-question-pair div.iDjcJe, /* People also ask */
-  .X4xFHd, .fXNJzc
+  .X4xFHd, .fXNJzc {
     font-family: var(--font-family-sans) !important;
+  }
   .wHYlTd,
-  .aztjNb
+  .aztjNb {
     line-height: 22px !important;
+  }
 
-  #hdtb
+  #hdtb {
     border: none;
+  }
 
 
   .GHDvEf,
   .GHDvEf:hover,
   .GHDvEf.selected,
-  .GHDvEf.selected:hover
+  .GHDvEf.selected:hover {
     background: var(--comment);
+  }
 
-  .gb_0b
+  .gb_0b {
     filter: var(--icon-filter);
+  }
 
 
-  .vk_bk
+  .vk_bk {
     color: var(--cyan) !important;
+  }
 
   /* card */
-  .MjjYud
+  .MjjYud {
     background: var(--bg-primary);
     padding: 4px;
     border: 2px solid var(--comment);
@@ -235,14 +247,17 @@ gruv-palette()
     margin-bottom: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     overflow: hidden;
+  }
 
-  .NTUU3c
+  .NTUU3c {
     background: var(--bg-secondary);
+  }
 
-  .Ww4FFb
+  .Ww4FFb {
     background: transparent !important;
+  }
 
-  .oBa0Fe
+  .oBa0Fe {
     background: var(--bg-primary);
     padding: 5px;
     border: 1px solid var(--cyan);
@@ -250,90 +265,131 @@ gruv-palette()
     margin-left: -64px;
     text-decoration: none;
     color: var(--orange) !important;
+  }
 
-  .MXl0lf
+  .MXl0lf {
     background: var(--orange);
     color: var(--bg-primary);
     transition: all 0.3s ease-in-out;
+  }
 
-  .MXl0lf:hover
+  .MXl0lf:hover {
     background: var(--blue);
-    color: var(--bg-primary)
+    color: var(--bg-primary);
+  }
 
-  .EZRelc .HbX59e
+  .EZRelc .HbX59e {
     color: var(--comment);
+  }
 
-  cite
+  cite {
     color: var(--yellow) !important;
+  }
 
   /* sidbar */
-  .SzZmKb
+  .SzZmKb {
     background: var(--bg-secondary);
+  }
 
-  .SPZz6b > h2 , .SPZz6b > div > span
+  .SPZz6b > h2 , .SPZz6b > div > span {
     color: var(--fg-primary) !important;
+  }
 
-  .glhbv
-  .pa8yL
-  .bvSTKc
-  .z1asCe
-  .Fp7My > svg
+  .glhbv,
+  .pa8yL,
+  .bvSTKc,
+  .z1asCe,
+  .Fp7My > svg {
     color: var(--yellow);
+  }
 
-  .yxjZuf
+  .yxjZuf {
     background: var(--comment);
+  }
 
-  #kp-wp-tab-overview
+  #kp-wp-tab-overview {
     background: var(--bg-primary);
+  }
 
-  .I6TXqe
+  .I6TXqe {
     background: var(--cyan);
+  }
 
-  .dG2XIf
-  .Wnoohf
-  .OJXvsb
+  .dG2XIf,
+  .Wnoohf,
+  .OJXvsb {
     background: var(--bg-primary);
+  }
 
   /* button on google.com home */
-  .gNO89b
+  .gNO89b {
     background: var(--blue) !important;
     color: var(--on-accent) !important;
     border: 1px solid var(--blue) !important;
+  }
 
-  .RNmpXc
+  .RNmpXc {
     background: var(--orange) !important;
     color: var(--on-accent) !important;
     border: 1px solid var(--orange) !important;
+  }
 
   .oIVYJb.FR7ZSc.k0Jjg .niO4u,
   .in7vHe.FR7ZSc.k0Jjg .niO4u,
   .rAzITb.FR7ZSc.k0Jjg .niO4u,
-  .X7yl2b.FR7ZSc.k0Jjg .niO4u
+  .X7yl2b.FR7ZSc.k0Jjg .niO4u {
     background-color: var(--comment) !important;
     border: 1px solid var(--bg-third) !important;
     color: var(--fg-primary) !important;
+  }
 
-  .rAzITb .niO4u .kHtcsd:hover
+  .rAzITb .niO4u .kHtcsd:hover {
     background-color: var(--bg-third) !important;
+  }
 
-  .oTiGzc, .yQLaje
+  .oTiGzc, .yQLaje {
     font-family: var(--font-family-mono) !important;
+  }
 
-  .RDmXvc
-    background-image: unquote('linear-gradient(transparent 0px, color-mix(in srgb, var(--bg-primary) 90%, transparent) 52px, var(--bg-primary) 80px)')
-  .zNsLfb
+  .RDmXvc {
+    background-image: linear-gradient(transparent 0px, color-mix(in srgb, var(--bg-primary) 90%, transparent) 52px, var(--bg-primary) 80px);
+  }
+  .zNsLfb {
     background-color: transparent !important;
+  }
+}
 
-
-@-moz-document url-prefix("https://translate.google.")
-  html
-    gruv-palette()
+@-moz-document url-prefix("https://translate.google.") {
+  html {
+    color-scheme: dark;
+    --bg-primary: #1d2021;
+    --bg-secondary: #141617;
+    --bg-third: #3c3836;
+    --bg-hover: #504945;
+    --comment: #282828;
+    --fg-primary: #d4be98;
+    --fg-secondary: #a89984;
+    --red: #ea6962;
+    --green: #a9b665;
+    --yellow: #d8a657;
+    --blue: #7daea3;
+    --magenta: #d3869b;
+    --cyan: #89b482;
+    --orange: #e78a4e;
+    --hints: color-mix(in srgb, var(--yellow) 80%, var(--fg-secondary));
+    --on-accent: var(--bg-primary);
+    --chip-bg: #d4be98;
+    --icon-filter: invert(1);
     --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas", "monospace";
+  }
+  /* gruvbox-material, foreground `material`: `dark` + `hard` above, other palettes via `@var select palette` ( https://github.com/sainnhe/gruvbox-material/blob/master/autoload/gruvbox_material.vim ) */
+  /*[[palette]]*/
 
   *:before,
-  *:after
+  *:after {
     display: none;
+  }
 
   body,
   .jTj8gd.XzOhkf .a2Icud,
@@ -372,27 +428,32 @@ gruv-palette()
   .KjuTac,               /** textarea>suggestion-field **/
   .DNFg3e,
   .D7mJAe,               /** ╮ saved - background **/
-  .j27i7                 /** ╯                    **/
+  .j27i7 {                 /** ╯                    **/
     background-color: var(--bg-primary) !important;
     color: var(--fg-primary) !important;
+  }
 
-  .j27i7
+  .j27i7 {
     border-bottom: 1px solid var(--cyan) !important;
+  }
 
   i[class*="material-icons-"],
-  i[class*="google-material-icons"]
+  i[class*="google-material-icons"] {
     font-family: "Google Material Icons", "Material Icons Extended" !important;
+  }
 
   /** details page **/
   .a2Icud,
-  .jTj8gd
+  .jTj8gd {
     background-color: var(--bg-primary) !important;
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
+  }
   .zWtKC,
   .aia4Ud,
-  .TcXXXb                /* navigator: History | Saved | Contributor */
+  .TcXXXb {                /* navigator: History | Saved | Contributor */
     font-family: var(--font-family-sans) !important;
+  }
 
   /** language button **/
   /**
@@ -417,61 +478,75 @@ gruv-palette()
 
   /** language tab **/
   .Ose4Jf,
-  .JJYS0b
+  .JJYS0b {
     font-family: var(--font-family-sans) !important;
+  }
 
   /** textarea>text **/
   .er8xn,
-  .J0lOec
+  .J0lOec {
     color: var(--fg-primary) !important;
-  .F0pQVc
+  }
+  .F0pQVc {
     font-family: var(--font-family-sans) !important;
+  }
 
   /** textarea>button-selection **/
-  .VfPpkd-AznF2e-LUERP-bN97Pc button span
+  .VfPpkd-AznF2e-LUERP-bN97Pc button span {
     color: var(--fg-primary) !important;
+  }
 
   /** textarea>button-ripple **/
   .VfPpkd-AznF2e-LUERP-bN97Pc button span:before,
-  .VfPpkd-AznF2e-LUERP-bN97Pc button span:after
+  .VfPpkd-AznF2e-LUERP-bN97Pc button span:after {
     display: none;
+  }
 
   /** textarea>button-font:hover **/
-  .VfPpkd-AznF2e-LUERP-bN97Pc button:hover span
+  .VfPpkd-AznF2e-LUERP-bN97Pc button:hover span {
     color: var(--green) !important;
     background-color: var(--comment) !important;
+  }
 
   /** textarea>button-selected **/
   .VfPpkd-AznF2e-LUERP-bN97Pc .VfPpkd-AznF2e-OWXEXe-auswjd,
   /**textarea>button:active **/
   .VfPpkd-AznF2e-LUERP-bN97Pc button:active,
   /** textarea>button-font:active **/
-  .VfPpkd-AznF2e-LUERP-bN97Pc button:active span
+  .VfPpkd-AznF2e-LUERP-bN97Pc button:active span {
     background-color: var(--comment) !important;
+  }
 
   /** highlight activated language tab **/
-  .PRdtG .VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb
-  .Ose4Jf.VfPpkd-AznF2e-OWXEXe-auswjd .VfPpkd-jY41G-V67aGc
+  .PRdtG .VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb,
+  .Ose4Jf.VfPpkd-AznF2e-OWXEXe-auswjd .VfPpkd-jY41G-V67aGc {
     color: var(--green) !important;
     border-color: var(--green) !important;
+  }
 
-  .X4DQ0:after           /** textarea>header>scroll-fade **/
-    background: unquote('linear-gradient(to right, transparent, var(--bg-primary))');
+  .X4DQ0:after {           /** textarea>header>scroll-fade **/
+    background: linear-gradient(to right, transparent, var(--bg-primary));
+  }
 
-  .U0xwnf::after
+  .U0xwnf::after {
     background: transparent !important;
+  }
 
-  .Bcbxbe.FwR7Pc         /** filter list **/
+  .Bcbxbe.FwR7Pc {         /** filter list **/
     background-color: var(--comment) !important;
+  }
 
   .VhOj3e,               /** translate from : **/
   .ODAbH,                /** icon **/
-  .UdTY9                 /** 拼音 **/
+  .UdTY9 {                 /** 拼音 **/
     color: var(--hints) !important;
-  .mvqA2c                /** <suggest> Link **/
+  }
+  .mvqA2c {                /** <suggest> Link **/
     color: var(--green) !important;
-  .NSSM9b                /** Reviewed by contributors **/
+  }
+  .NSSM9b {                /** Reviewed by contributors **/
     color: var(--bg-primary) !important;
+  }
 
   /** text box **/
   .GAyS9e,
@@ -498,10 +573,11 @@ gruv-palette()
   .CLKk4c,
   .dykxn,                 /** language search drop down list **/
   input.yFQBKb,           /** language search input **/
-  .G3Fn7c                 /** language search : No Results **/
+  .G3Fn7c {                 /** language search : No Results **/
     background: var(--comment) !important;
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
+  }
 
   .ordo2:hover,
   .ordo2:focus,
@@ -514,9 +590,10 @@ gruv-palette()
   .jCAhz:hover,
   .JLqJ4b.C1N51c,
   .JLqJ4b:hover,
-  .Xcmxjb.FwR7Pc
+  .Xcmxjb.FwR7Pc {
     background: var(--comment) !important;
     color: var(--fg-primary) !important;
+  }
 
 
   .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-TvZj5c-OWXEXe-M1Soyc,
@@ -554,37 +631,45 @@ gruv-palette()
   .qSb8Pe,
   .NqnNQd,
   .lRu31,
-  .lrSgmd
+  .lrSgmd {
     color: var(--fg-primary) !important;
+  }
 
   button,
   .VlPnLc svg,           /** footer **/
-  .TcXXXb
+  .TcXXXb {
     color: var(--blue) !important;
-  .EYBmYc                /** history **/
-  .kgJkHd                /** saved **/
+  }
+  .EYBmYc,                /** history **/
+  .kgJkHd {                /** saved **/
     color: var(--yellow) !important;
-  .ZihNHd.EmpJsc > span > .NMm5M
+  }
+  .ZihNHd.EmpJsc > span > .NMm5M {
     color: var(--hints) !important;
+  }
 
   .eIKIse,               /** ╮ Noun, Verb, ... **/
-  .jq25U                 /** ╯                 **/
+  .jq25U {                 /** ╯                 **/
     color: var(--yellow) !important;
+  }
 
-  .U8K5nb
+  .U8K5nb {
     background: var(--blue) !important;
     color: var(--on-accent) !important;
     border: 1px solid var(--blue) !important;
+  }
 
   /** More translations **/
-  .ydsGXd
+  .ydsGXd {
     background-color: var(--bg-primary) !important;
     color: var(--blue) !important;
+  }
 
   div.sbtc,
   .gsfi,
-  .lst
+  .lst {
     font-family: var(--font-family-mono) !important;
+  }
 
   .g,
   .std,
@@ -598,18 +683,21 @@ gruv-palette()
   cite.iUh30,
   cite.iUh30 > span,
   span.go,
-  table.CFNMfb *
+  table.CFNMfb * {
     font-family: var(--font-family-sans) !important;
+  }
 
   .wrBvFf > a,
   .HiHjCd > a,
   cite.iUh30,
   cite.iUh30 > span,
-  span.go
+  span.go {
     font-size: 14px !important;
+  }
 
-  .FvchS
+  .FvchS {
     position: relative;
+  }
 
   /**
    * button of `Text`, `Images`, `Documents`, `Websites`
@@ -617,130 +705,160 @@ gruv-palette()
   **/
   /* button-group */
   .Rj2Mlf:not(:disabled),
-  .gwGW9e
+  .gwGW9e {
     background-color: var(--chip-bg) !important;
+  }
 
   /** search languages activated **/
-  .qSb8Pe.KKjvXb
+  .qSb8Pe.KKjvXb {
     background-color: var(--bg-primary) !important;
     color: var(--green) !important;
+  }
 
 
   .a88hkc,               /** feedback-link **/
   .gHNJvf,               /** voice-input-button **/
   .nidPne,               /** keyboard-ui-button **/
-  .vNTDhc                /** rate this translate **/
-    display: none
+  .vNTDhc {                /** rate this translate **/
+    display: none;
+  }
 
-  ::-webkit-scrollbar    /** scrollbar **/
+  ::-webkit-scrollbar {    /** scrollbar **/
     background-color: var(--bg-secondary) !important;
+  }
 
-  span .VfPpkd-YVzG2b::after
+  span .VfPpkd-YVzG2b::after {
     color: var(--green) !important;
+  }
 
   /** images search **/
-  .D7BEKc:focus-within .CQQi5b
-  .CQQi5b
+  .D7BEKc:focus-within .CQQi5b,
+  .CQQi5b {
     background: var(--green) !important;
-  .FJCnk                 /** hr **/
+  }
+  .FJCnk {                 /** hr **/
     border: 1px solid var(--cyan) !important;
+  }
   .q7OsL,                /** board **/
-  .eTNoGb
+  .eTNoGb {
     border: none !important;
+  }
   .rlWbvd,
   .pu3MFc,
   .uqt39c,
   .LYeNu,
-  .sp2Bqb
+  .sp2Bqb {
     background: var(--comment) !important;
     color: var(--fg-primary) !important;
-  .zXU7Rb
+  }
+  .zXU7Rb {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+  }
 
   /** documents **/
   .uqt39c,
   .sp2Bqb,
-  .k5v5Nb
+  .k5v5Nb {
     font-family: var(--font-family-sans) !important;
+  }
 
   /** website **/
-  input#i48              /** cursor **/
+  input#i48 {              /** cursor **/
     caret-color: var(--fg-primary) !important;
+  }
 
-  body#yDmH0d > c-wiz > div > div:nth-child(2) > c-wiz > div:nth-child(4) > c-wiz > div:nth-child(3) > div > span > button:not(:disabled)
+  body#yDmH0d > c-wiz > div > div:nth-child(2) > c-wiz > div:nth-child(4) > c-wiz > div:nth-child(3) > div > span > button:not(:disabled) {
     background-color: var(--chip-bg) !important;
     color: var(--green) !important;
+  }
 
-  .VfPpkd-NLUYnc-V67aGc  /** Website placeholder **/
+  .VfPpkd-NLUYnc-V67aGc {  /** Website placeholder **/
     color: var(--fg-primary) !important;
+  }
 
   /** input box boder **/
   .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-Brv4Fb,
   .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-Ra9xwd,
   .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-MpmGFe,
-  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc {
     border-color: var(--gm-outlinedtextfield-outline-color--stateful,var(--fg-primary)) !important;
+  }
 
   /** hover or select sentence **/
   .WtlSJf:hover,
   .Xcmxjb.FwR7Pc,
   .jCAhz.C1N51c,
-  .jCAhz:hover
+  .jCAhz:hover {
     background-color: var(--bg-hover) !important;
-  .NWlwsb
+  }
+  .NWlwsb {
     background-color: var(--comment) !important;
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
-    border: 1px solid unquote('color-mix(in srgb, var(--fg-secondary) 80%, transparent)');
+    border: 1px solid color-mix(in srgb, var(--fg-secondary) 80%, transparent);
     border-radius: 8px;
     box-shadow: 1px 2px 8px 4px var(--bg-secondary) !important;
-  .WtlSJf.KKjvXb
+  }
+  .WtlSJf.KKjvXb {
     background-color: var(--bg-third) !important;
+  }
 
   /** see dictionary **/
-  .yP8PRe
+  .yP8PRe {
     color: var(--cyan) !important;
-  .AzGRq.VfPpkd-StrnGf-rymPhb-ibnC6b
-    border: 1px solid unquote('color-mix(in srgb, var(--fg-secondary) 80%, transparent)');
+  }
+  .AzGRq.VfPpkd-StrnGf-rymPhb-ibnC6b {
+    border: 1px solid color-mix(in srgb, var(--fg-secondary) 80%, transparent);
     border-radius: 2px;
+  }
 
   /** background color after click **/
-  span.jCAhz.ChMk0b.C1N51c
+  span.jCAhz.ChMk0b.C1N51c {
     background-color: var(--bg-hover) !important;
+  }
 
-  .s0ijVb
+  .s0ijVb {
     background-color: var(--bg-primary) !important;
+  }
   .rm1UF,
-  .QcsUad
+  .QcsUad {
     border: 1px solid var(--bg-primary);
     border-radius: 6px;
     box-shadow: inset 0 0 3px 2px var(--comment) !important;
+  }
 
   /** settings **/
-  .VfPpkd-xl07Ob-XxIAqe
+  .VfPpkd-xl07Ob-XxIAqe {
     color: var(--fg-primary);
     background-color: var(--comment) !important;
     border: 1px solid var(--bg-primary) !important;
+  }
   .pWIpbc,
   .Jp7KKb,
-  .XOPM0
+  .XOPM0 {
     color: var(--fg-primary);
+  }
 
   /** expand all/collapse all **/
-  .qt6jm
+  .qt6jm {
     border-top: 2px solid;
     justify-content: flex-end;
     padding: 0 16px;
     background-color: var(--comment) !important;
     border-radius: 8px;
-  .hX7wnb
+  }
+  .hX7wnb {
     background-color: var(--bg-primary) !important;
+  }
 
   /** google menu **/
-  .gb_Ea:not(.gb_bc) .gb_1c>*
+  .gb_Ea:not(.gb_bc) .gb_1c>* {
     background-color: var(--bg-primary) !important;
-  .gb_Vc .gb_Qc, .vpl77
+  }
+  .gb_Vc .gb_Qc, .vpl77 {
     background-color: var(--bg-primary);
     color: var(--fg-primary);
     font-family: var(--font-family-sans);
+  }
+}
