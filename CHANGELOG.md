@@ -1,3 +1,14 @@
+## [2.0.2](https://github.com/marslo/google-gruvbox/compare/v2.0.1...v2.0.2) (2026-10-21)
+
+### Bug Fixes
+
+* **translate**: replace light borders and backgrounds with palette colors across chips, panels and language picker ([8ccf019](https://github.com/marslo/google-gruvbox/commit/8ccf0197dbb1a6a48d87bc2e0582da7f48fe40a6))
+  - add contrasting text color to Text/Images/Documents/Websites chips
+  - theme history/saved panel border, item separators and language pills with `--bg-third`
+  - theme history footer and `Manage all activity` link
+  - theme history/saved circle buttons and `More translations` divider
+  - theme language picker container, header background and border
+
 ## [2.0.1](https://github.com/marslo/google-gruvbox/compare/v2.0.0...v2.0.1) (2026-10-21)
 
 ### Code Refactoring
