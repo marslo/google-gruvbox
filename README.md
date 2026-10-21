@@ -45,13 +45,13 @@
 
 ## Development
 
-- both styles use the Stylus `stylus` preprocessor ( indent syntax )
+- both styles are plain css ( `{}` syntax )
 - `google-gruvbox-material.user.css` keeps the same rules as `google-gruvbox.user.css`; only the palette differs:
-  - six palettes live in the `palettes` hash, `gruv-palette()` maps the selected one onto `--bg-primary`, `--fg-primary`, `--blue`, …
-  - the `@var select palette` value is injected as `palette='…';` before compiling
+  - the `Dark Hard` palette is defined in each section's `html { … }` block ( `--bg-primary`, `--fg-primary`, `--blue`, … )
+  - other palettes are `@var select palette` options, expanded by the Stylus `uso` preprocessor into an `html:root { … }` override at `/*[[palette]]*/`
 
 > [!IMPORTANT]
-> Indentation is significant: a rule indented less than its `@-moz-document` block falls out of it and applies to **every** site.
+> Option values must not contain `*/` — it closes the `==UserStyle==` metadata comment early.
 
 ## Credits
 
