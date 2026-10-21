@@ -1,19 +1,19 @@
 /* ==UserStyle==
-@name           Google GruvBox Material (marslo)
-@version        2.0.1
+@name           Google GruvBox Material
 @namespace      github.com/marslo
-@description    gruvbox-material ( dark / light × hard / medium / soft ) theme for google search and translate. inherited from: https://github.com/touhidulshawan/gruvbox-google
-@preprocessor   uso
+@version        2.0.1
+@description    gruvbox-material ( dark / light × hard / medium / soft ) theme for google search and translate
 @author         Marslo Jiao
 @homepageURL    https://github.com/marslo/google-gruvbox
 @updateURL      https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox-material.user.css
+@preprocessor   uso
 @var select     palette "Palette" {
   "Dark Hard*": "html:root { --gruv-palette: dark-hard; }",
   "Dark Medium": "html:root { --gruv-palette: dark-medium; --bg-primary: #282828; --bg-secondary: #1b1b1b; --bg-third: #45403d; --bg-hover: #5a524c; --comment: #32302f; }",
   "Dark Soft": "html:root { --gruv-palette: dark-soft; --bg-primary: #32302f; --bg-secondary: #252423; --bg-third: #504945; --bg-hover: #665c54; --comment: #3c3836; }",
-  "Light Hard": "html:root { --gruv-palette: light-hard; color-scheme: light; --bg-primary: #f9f5d7; --bg-secondary: #f3eac7; --bg-third: #f2e5bc; --bg-hover: #ebdbb2; --comment: #f5edca; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #ebdbb2; --icon-filter: none; }",
-  "Light Medium": "html:root { --gruv-palette: light-medium; color-scheme: light; --bg-primary: #fbf1c7; --bg-secondary: #f2e5bc; --bg-third: #eee0b7; --bg-hover: #ddccab; --comment: #f4e8be; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #ddccab; --icon-filter: none; }",
-  "Light Soft": "html:root { --gruv-palette: light-soft; color-scheme: light; --bg-primary: #f2e5bc; --bg-secondary: #ebdbb2; --bg-third: #e6d5ae; --bg-hover: #d5c4a1; --comment: #eddeb5; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #d5c4a1; --icon-filter: none; }"
+  "Light Hard": "html:root { --gruv-palette: light-hard; color-scheme: light; --bg-primary: #f9f5d7; --bg-secondary: #f3eac7; --bg-third: #f2e5bc; --bg-hover: #ebdbb2; --comment: #f5edca; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #ebdbb2; --icon-filter: none; --on-chip: var(--fg-primary); }",
+  "Light Medium": "html:root { --gruv-palette: light-medium; color-scheme: light; --bg-primary: #fbf1c7; --bg-secondary: #f2e5bc; --bg-third: #eee0b7; --bg-hover: #ddccab; --comment: #f4e8be; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #ddccab; --icon-filter: none; --on-chip: var(--fg-primary); }",
+  "Light Soft": "html:root { --gruv-palette: light-soft; color-scheme: light; --bg-primary: #f2e5bc; --bg-secondary: #ebdbb2; --bg-third: #e6d5ae; --bg-hover: #d5c4a1; --comment: #eddeb5; --fg-primary: #654735; --fg-secondary: #7c6f64; --red: #c14a4a; --green: #6c782e; --yellow: #b47109; --blue: #45707a; --magenta: #945e80; --cyan: #4c7a5d; --orange: #c35e0a; --chip-bg: #d5c4a1; --icon-filter: none; --on-chip: var(--fg-primary); }"
 }
 ==/UserStyle== */
 
@@ -37,6 +37,7 @@
     --hints: color-mix(in srgb, var(--yellow) 80%, var(--fg-secondary));
     --on-accent: var(--bg-primary);
     --chip-bg: #d4be98;
+    --on-chip: var(--bg-primary);
     --icon-filter: invert(1);
     --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font";
@@ -379,6 +380,7 @@
     --hints: color-mix(in srgb, var(--yellow) 80%, var(--fg-secondary));
     --on-accent: var(--bg-primary);
     --chip-bg: #d4be98;
+    --on-chip: var(--bg-primary);
     --icon-filter: invert(1);
     --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas", "monospace";
@@ -578,6 +580,17 @@
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
   }
+  .pEyuac,                /** language picker container **/
+  .fMHXgc {                 /** language picker header / search bar **/
+    background-color: var(--comment) !important;
+    box-shadow: none !important;
+  }
+  .pEyuac {
+    border: 1px solid var(--bg-third) !important;
+  }
+  .fMHXgc {
+    border-bottom: 1px solid var(--bg-third) !important;
+  }
 
   .ordo2:hover,
   .ordo2:focus,
@@ -707,6 +720,7 @@
   .Rj2Mlf:not(:disabled),
   .gwGW9e {
     background-color: var(--chip-bg) !important;
+    color: var(--on-chip) !important;
   }
 
   /** search languages activated **/
@@ -850,6 +864,31 @@
   }
   .hX7wnb {
     background-color: var(--bg-primary) !important;
+    border-top-color: var(--bg-third) !important;
+  }
+
+  /** history / saved panel **/
+  .vDGmEc,
+  .kmXzdf,
+  .uojYg {
+    border-color: var(--bg-third) !important;
+    outline-color: var(--bg-third) !important;
+    background-color: var(--bg-primary) !important;
+  }
+  .NBY4Kb {                /** history footer **/
+    background-color: var(--bg-primary) !important;
+    border-color: var(--bg-third) !important;
+  }
+  .SdtK5b {                /** manage all activity **/
+    color: var(--blue) !important;
+  }
+  .vDGmEc *:not(.j27i7),
+  .uojYg *:not(.j27i7) {  /** item separators **/
+    border-color: var(--bg-third) !important;
+  }
+  .VlPnLc .ySES5,
+  .VlPnLc .mqNsCe:hover .ySES5 {  /** history / saved circle button **/
+    border-color: var(--bg-third) !important;
   }
 
   /** google menu **/

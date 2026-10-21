@@ -1,9 +1,9 @@
 /* ==UserStyle==
-@name           Google GruvBox (marslo)
-@version        2.0.1
+@name           Google GruvBox Redux
 @namespace      github.com/marslo
+@version        2.0.1
 @description    Gruvbox dark theme for google search and translate. inhered from: https://github.com/touhidulshawan/gruvbox-google
-@author         Touhidul Shawan ( Google Search ); Marslo Jiao ( Google Translate )
+@author         Touhidul Shawan ( Google Search ) · Marslo Jiao ( Google Translate )
 @homepageURL    https://github.com/marslo/google-gruvbox
 @updateURL      https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox.user.css
 ==/UserStyle== */
@@ -553,6 +553,17 @@
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
   }
+  .pEyuac,                /** language picker container **/
+  .fMHXgc {                 /** language picker header / search bar **/
+    background-color: var(--comment) !important;
+    box-shadow: none !important;
+  }
+  .pEyuac {
+    border: 1px solid var(--bg-third) !important;
+  }
+  .fMHXgc {
+    border-bottom: 1px solid var(--bg-third) !important;
+  }
 
   .ordo2:hover,
   .ordo2:focus,
@@ -682,6 +693,7 @@
   .Rj2Mlf:not(:disabled),
   .gwGW9e {
     background-color: var(--fg-primary) !important;
+    color: var(--bg-primary) !important;
   }
 
   /** search languages activated **/
@@ -825,6 +837,31 @@
   }
   .hX7wnb {
     background-color: var(--bg-primary) !important;
+    border-top-color: var(--bg-third) !important;
+  }
+
+  /** history / saved panel **/
+  .vDGmEc,
+  .kmXzdf,
+  .uojYg {
+    border-color: var(--bg-third) !important;
+    outline-color: var(--bg-third) !important;
+    background-color: var(--bg-primary) !important;
+  }
+  .NBY4Kb {                /** history footer **/
+    background-color: var(--bg-primary) !important;
+    border-color: var(--bg-third) !important;
+  }
+  .SdtK5b {                /** manage all activity **/
+    color: var(--blue) !important;
+  }
+  .vDGmEc *:not(.j27i7),
+  .uojYg *:not(.j27i7) {  /** item separators **/
+    border-color: var(--bg-third) !important;
+  }
+  .VlPnLc .ySES5,
+  .VlPnLc .mqNsCe:hover .ySES5 {  /** history / saved circle button **/
+    border-color: var(--bg-third) !important;
   }
 
   /** google menu **/
