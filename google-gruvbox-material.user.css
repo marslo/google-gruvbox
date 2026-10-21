@@ -1,0 +1,746 @@
+/* ==UserStyle==
+@name           Google GruvBox Material (marslo)
+@version        1.0.21
+@namespace      github.com/marslo
+@description    gruvbox-material ( dark / light × hard / medium / soft ) theme for google search and translate. inherited from: https://github.com/touhidulshawan/gruvbox-google
+@preprocessor   stylus
+@author         Touhidul Shawan ( Google Search ); Marslo Jiao ( Google Translate )
+@homepageURL    https://github.com/marslo/google-gruvbox
+@updateURL      https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox-material.user.css
+@var select     palette "Palette" {
+  "Dark Hard*": "'dark-hard'",
+  "Dark Medium": "'dark-medium'",
+  "Dark Soft": "'dark-soft'",
+  "Light Hard": "'light-hard'",
+  "Light Medium": "'light-medium'",
+  "Light Soft": "'light-soft'"
+}
+==/UserStyle== */
+// ── gruvbox-material palettes, foreground `material`: https://github.com/sainnhe/gruvbox-material/blob/master/autoload/gruvbox_material.vim
+palette ?= 'dark-hard'
+palettes = {
+  'dark-hard': { bg_dim: #141617, bg0: #1d2021, bg1: #282828, bg3: #3c3836, bg5: #504945, scheme: dark, fg0: #d4be98, grey2: #a89984, red: #ea6962, orange: #e78a4e, yellow: #d8a657, green: #a9b665, aqua: #89b482, blue: #7daea3, purple: #d3869b, chip: #d4be98, icon_filter: unquote('invert(1)') },
+  'dark-medium': { bg_dim: #1b1b1b, bg0: #282828, bg1: #32302f, bg3: #45403d, bg5: #5a524c, scheme: dark, fg0: #d4be98, grey2: #a89984, red: #ea6962, orange: #e78a4e, yellow: #d8a657, green: #a9b665, aqua: #89b482, blue: #7daea3, purple: #d3869b, chip: #d4be98, icon_filter: unquote('invert(1)') },
+  'dark-soft': { bg_dim: #252423, bg0: #32302f, bg1: #3c3836, bg3: #504945, bg5: #665c54, scheme: dark, fg0: #d4be98, grey2: #a89984, red: #ea6962, orange: #e78a4e, yellow: #d8a657, green: #a9b665, aqua: #89b482, blue: #7daea3, purple: #d3869b, chip: #d4be98, icon_filter: unquote('invert(1)') },
+  'light-hard': { bg_dim: #f3eac7, bg0: #f9f5d7, bg1: #f5edca, bg3: #f2e5bc, bg5: #ebdbb2, scheme: light, fg0: #654735, grey2: #7c6f64, red: #c14a4a, orange: #c35e0a, yellow: #b47109, green: #6c782e, aqua: #4c7a5d, blue: #45707a, purple: #945e80, chip: #ebdbb2, icon_filter: unquote('none') },
+  'light-medium': { bg_dim: #f2e5bc, bg0: #fbf1c7, bg1: #f4e8be, bg3: #eee0b7, bg5: #ddccab, scheme: light, fg0: #654735, grey2: #7c6f64, red: #c14a4a, orange: #c35e0a, yellow: #b47109, green: #6c782e, aqua: #4c7a5d, blue: #45707a, purple: #945e80, chip: #ddccab, icon_filter: unquote('none') },
+  'light-soft': { bg_dim: #ebdbb2, bg0: #f2e5bc, bg1: #eddeb5, bg3: #e6d5ae, bg5: #d5c4a1, scheme: light, fg0: #654735, grey2: #7c6f64, red: #c14a4a, orange: #c35e0a, yellow: #b47109, green: #6c782e, aqua: #4c7a5d, blue: #45707a, purple: #945e80, chip: #d5c4a1, icon_filter: unquote('none') }
+}
+
+// map the selected palette onto the variables used by the rules below
+gruv-palette()
+  p = palettes[palette]
+  color-scheme: p.scheme
+  --bg-primary: p.bg0
+  --bg-secondary: p.bg_dim
+  --bg-third: p.bg3
+  --bg-hover: p.bg5
+  --comment: p.bg1
+  --fg-primary: p.fg0
+  --fg-secondary: p.grey2
+  --red: p.red
+  --green: p.green
+  --yellow: p.yellow
+  --blue: p.blue
+  --magenta: p.purple
+  --cyan: p.aqua
+  --orange: p.orange
+  --hints: unquote('color-mix(in srgb, var(--yellow) 80%, var(--fg-secondary))')
+  --on-accent: var(--bg-primary)
+  --chip-bg: p.chip
+  --icon-filter: p.icon_filter
+
+
+@-moz-document domain("www.google.com")
+  html
+    gruv-palette()
+    --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
+    --font-family-mono: "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font";
+
+  body,
+  #hdtbSum,
+  #appbar,
+  #gb,
+  .c93Gbe,
+  .s,
+  .s .st em,
+  .st.s.std em,
+  .eJ7tvc,
+  .s7d4ef,
+  .jloFI,
+  .EIJn2,
+  .OZ9ddf .Fzsovc,
+  #fbar
+  #pTwnEc
+  .sfbg
+    background: var(--bg-primary) !important;
+    color: var(--fg-primary) !important;
+
+  code,
+  textarea
+    font-family: var(--font-family-mono) !important;
+
+
+  a:link,
+  .w,
+  #prs a:visited,
+  #prs a:active,
+  .q:active,
+  .q:visited,
+  .kl:active,
+  .tbotu,
+  a.fl:link,
+  .fl a,
+  .flt,
+  a.flt,
+  .gl a:link,
+  a.mblink,
+  .mblink b,
+  .i3LlFf,
+  .kno-ecr-pt,
+  .w8qArf .fl
+    color: var(--blue) !important;
+
+
+  .mblink:visited,
+  a:visited
+    color: var(--magenta) !important;
+
+
+  .cv2VAd,
+  .kp-blk,
+  #fbar,
+  .WwiUwd
+    background: var(--bg-secondary);
+    border-color: var(--comment);
+
+  .gLFyf,
+  .i29hTd .qLLird,
+  .sbct:first-child .suggestions-inner-container,
+  .RNNXgb
+    color: var(--fg-primary);
+
+
+  .aajZCb,
+  .sbl1,
+  .RNNXgb,
+  .sbhl
+    background: var(--bg-primary);
+    border-radius: 24px !important;
+    border: 1px solid var(--cyan);
+    color: var(--fg-primary);
+    font-family: var(--font-family-mono) !important;
+
+  .RNNXgb:hover
+    background: var(--bg-third);
+    border: 1px solid var(--cyan);
+
+  textarea.gLFyf,
+  .YacQv,
+  #result-stats
+    font-family: var(--font-family-mono) !important;
+
+  .SDkEP
+    color: var(--fg-primary) !important
+
+  /*
+  .SDkEP
+  .Tg7LZd
+    background: var(--bg-primary);
+  */
+
+  .ExCKkf > svg
+    color: var(--red);
+
+  .QCzoEc > svg
+    color: var(--cyan);
+
+  .zgAlFc > span > svg
+    color: var(--orange);
+
+
+  .k8XOCe
+  .R0xfCb
+  .VCOFK
+  .s8bAkb
+    background: var(--bg-primary);
+
+  .s75CSd
+  .OhScic
+  .AB4Wff
+    color: var(--cyan);
+
+  .sbct:hover
+    border: none !important;
+    background: var(--comment);
+    cursor: pointer;
+
+  .JCHpcb
+    color: var(--red) !important;
+
+  .wM6W7d
+  .WggQGd
+    /** color: var(--magenta) !important; **/
+    color: var(--fg-secondary) !important;
+    font-family: var(--font-family-sans) !important;
+
+  .minidiv .sfbg
+    background: var(--bg-secondary);
+
+  .g,
+  .ssJ7i,
+  .iAIpCb,
+  .JNkvid .HnYYW,
+  .e9EfHf,
+  .fm06If .ILfuVd,
+  .c2xzTb .ILfuVd,
+  .Jb0Zif .c2xzTb .ILfuVd,
+  .w5mTAe .ILfuVd,
+  .W0urI .ILfuVd,
+  .clOx1e,
+  .jloFI,
+  .HJSKzf, .wHYlTd, .JgzqYd,                           /* translator in Google */
+  .YmvwI,                                              /* navigator: All | Images | Shopping | ... */
+  .FMKtTb, .Lu57id,
+  .IFnjPb, .CSkcDe, .related-question-pair div.iDjcJe, /* People also ask */
+  .X4xFHd, .fXNJzc
+    font-family: var(--font-family-sans) !important;
+  .wHYlTd,
+  .aztjNb
+    line-height: 22px !important;
+
+  #hdtb
+    border: none;
+
+
+  .GHDvEf,
+  .GHDvEf:hover,
+  .GHDvEf.selected,
+  .GHDvEf.selected:hover
+    background: var(--comment);
+
+  .gb_0b
+    filter: var(--icon-filter);
+
+
+  .vk_bk
+    color: var(--cyan) !important;
+
+  /* card */
+  .MjjYud
+    background: var(--bg-primary);
+    padding: 4px;
+    border: 2px solid var(--comment);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    overflow: hidden;
+
+  .NTUU3c
+    background: var(--bg-secondary);
+
+  .Ww4FFb
+    background: transparent !important;
+
+  .oBa0Fe
+    background: var(--bg-primary);
+    padding: 5px;
+    border: 1px solid var(--cyan);
+    border-radius: 4px;
+    margin-left: -64px;
+    text-decoration: none;
+    color: var(--orange) !important;
+
+  .MXl0lf
+    background: var(--orange);
+    color: var(--bg-primary);
+    transition: all 0.3s ease-in-out;
+
+  .MXl0lf:hover
+    background: var(--blue);
+    color: var(--bg-primary)
+
+  .EZRelc .HbX59e
+    color: var(--comment);
+
+  cite
+    color: var(--yellow) !important;
+
+  /* sidbar */
+  .SzZmKb
+    background: var(--bg-secondary);
+
+  .SPZz6b > h2 , .SPZz6b > div > span
+    color: var(--fg-primary) !important;
+
+  .glhbv
+  .pa8yL
+  .bvSTKc
+  .z1asCe
+  .Fp7My > svg
+    color: var(--yellow);
+
+  .yxjZuf
+    background: var(--comment);
+
+  #kp-wp-tab-overview
+    background: var(--bg-primary);
+
+  .I6TXqe
+    background: var(--cyan);
+
+  .dG2XIf
+  .Wnoohf
+  .OJXvsb
+    background: var(--bg-primary);
+
+  /* button on google.com home */
+  .gNO89b
+    background: var(--blue) !important;
+    color: var(--on-accent) !important;
+    border: 1px solid var(--blue) !important;
+
+  .RNmpXc
+    background: var(--orange) !important;
+    color: var(--on-accent) !important;
+    border: 1px solid var(--orange) !important;
+
+  .oIVYJb.FR7ZSc.k0Jjg .niO4u,
+  .in7vHe.FR7ZSc.k0Jjg .niO4u,
+  .rAzITb.FR7ZSc.k0Jjg .niO4u,
+  .X7yl2b.FR7ZSc.k0Jjg .niO4u
+    background-color: var(--comment) !important;
+    border: 1px solid var(--bg-third) !important;
+    color: var(--fg-primary) !important;
+
+  .rAzITb .niO4u .kHtcsd:hover
+    background-color: var(--bg-third) !important;
+
+  .oTiGzc, .yQLaje
+    font-family: var(--font-family-mono) !important;
+
+  .RDmXvc
+    background-image: unquote('linear-gradient(transparent 0px, color-mix(in srgb, var(--bg-primary) 90%, transparent) 52px, var(--bg-primary) 80px)')
+  .zNsLfb
+    background-color: transparent !important;
+
+
+@-moz-document url-prefix("https://translate.google.")
+  html
+    gruv-palette()
+    --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
+    --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas", "monospace";
+
+  *:before,
+  *:after
+    display: none;
+
+  body,
+  .jTj8gd.XzOhkf .a2Icud,
+  #gb,
+  .gb_qa .gb_Kd.gb_Sd.gb_Td,
+  .RvYhPd.Q5Onnd,
+  .RvYhPd.dtohSe,
+  .RvYhPd::before,
+  .frame,
+  .ita-hwt-jfk-standard,
+  .history-top-header .history-top-bar,
+  .history-container .info-bar,
+  .phrasebook-top-header,
+  .phrasebook-container .nav-bar,
+  .gb_fd .gb_F,
+  .gb_3d,
+  .RvYhPd,
+  .MmZJl,
+  .aCQag,
+  .ccvoYb,
+  .WFnNle,
+  .I87fLc.XzOhkf,
+  .ySES5,
+  .myVd4c .ySES5,
+  .yFQBKb,
+  .kXN2zb,
+  .kiSRoe,
+  .eYhTcb,
+  .LpQB8e,
+  .NdeSHd,
+  .AzKM4,
+  .B3AePc,
+  .rJfKsc,
+  .KskmCc,
+  .EO28P,
+  .KjuTac,               /** textarea>suggestion-field **/
+  .DNFg3e,
+  .D7mJAe,               /** ╮ saved - background **/
+  .j27i7                 /** ╯                    **/
+    background-color: var(--bg-primary) !important;
+    color: var(--fg-primary) !important;
+
+  .j27i7
+    border-bottom: 1px solid var(--cyan) !important;
+
+  i[class*="material-icons-"],
+  i[class*="google-material-icons"]
+    font-family: "Google Material Icons", "Material Icons Extended" !important;
+
+  /** details page **/
+  .a2Icud,
+  .jTj8gd
+    background-color: var(--bg-primary) !important;
+    color: var(--fg-primary) !important;
+    font-family: var(--font-family-mono) !important;
+  .zWtKC,
+  .aia4Ud,
+  .TcXXXb                /* navigator: History | Saved | Contributor */
+    font-family: var(--font-family-sans) !important;
+
+  /** language button **/
+  /**
+   *   .kgJkHd,
+   *   .Rq5Gcb,
+   *   .vk-btn.vk-sf-h,
+   *   .vk-btn.vk-sf-a,
+   *   .JJYS0b:hover .VfPpkd-jY41G-V67aGc,
+   *   .tAzJq:hover,
+   *   .S6GkK,
+   *   .kgnlhe.FwR7Pc,
+   *   .MtFg0.FwR7Pc,
+   *   .G3Fn7c,
+   *   .VfPpkd-AznF2e .VfPpkd-YVzG2b
+   *     color: var(--green) !important;
+   *
+   *   .VfPpkd-AznF2e .VfPpkd-YVzG2b::after,
+   *   .VfPpkd-AznF2e .VfPpkd-YVzG2b::before
+   *     background-color: var(--green) !important;
+  **/
+
+
+  /** language tab **/
+  .Ose4Jf,
+  .JJYS0b
+    font-family: var(--font-family-sans) !important;
+
+  /** textarea>text **/
+  .er8xn,
+  .J0lOec
+    color: var(--fg-primary) !important;
+  .F0pQVc
+    font-family: var(--font-family-sans) !important;
+
+  /** textarea>button-selection **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button span
+    color: var(--fg-primary) !important;
+
+  /** textarea>button-ripple **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button span:before,
+  .VfPpkd-AznF2e-LUERP-bN97Pc button span:after
+    display: none;
+
+  /** textarea>button-font:hover **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button:hover span
+    color: var(--green) !important;
+    background-color: var(--comment) !important;
+
+  /** textarea>button-selected **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc .VfPpkd-AznF2e-OWXEXe-auswjd,
+  /**textarea>button:active **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button:active,
+  /** textarea>button-font:active **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc button:active span
+    background-color: var(--comment) !important;
+
+  /** highlight activated language tab **/
+  .PRdtG .VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb
+  .Ose4Jf.VfPpkd-AznF2e-OWXEXe-auswjd .VfPpkd-jY41G-V67aGc
+    color: var(--green) !important;
+    border-color: var(--green) !important;
+
+  .X4DQ0:after           /** textarea>header>scroll-fade **/
+    background: unquote('linear-gradient(to right, transparent, var(--bg-primary))');
+
+  .U0xwnf::after
+    background: transparent !important;
+
+  .Bcbxbe.FwR7Pc         /** filter list **/
+    background-color: var(--comment) !important;
+
+  .VhOj3e,               /** translate from : **/
+  .ODAbH,                /** icon **/
+  .UdTY9                 /** 拼音 **/
+    color: var(--hints) !important;
+  .mvqA2c                /** <suggest> Link **/
+    color: var(--green) !important;
+  .NSSM9b                /** Reviewed by contributors **/
+    color: var(--bg-primary) !important;
+
+  /** text box **/
+  .GAyS9e,
+  .Pt010b .a2Icud,
+  .SMqeCb,
+  .DLAnyc,
+  .gb_rb.gb_rb,
+  .UxtXRb,
+  .ZwgMLb,
+  .rm1UF,
+  .P6w8m:not(.BDJ8fb):not(.Jj6Lae),
+  .ita-kd-dropdown-menu,
+  .vk-box,
+  .vk-btn,
+  .ita-hwt-ime,
+  .ita-hwt-buttons,
+  .ita-hwt-candidates,
+  .gb_Ic,
+  .gb_Bc,
+  .dykxn.MeCBDd.j33Gae,
+  .oJweqc.KKjvXb,
+  .er8xn,                 /** input box **/
+  .QcsUad,                /** output box **/
+  .CLKk4c,
+  .dykxn,                 /** language search drop down list **/
+  input.yFQBKb,           /** language search input **/
+  .G3Fn7c                 /** language search : No Results **/
+    background: var(--comment) !important;
+    color: var(--fg-primary) !important;
+    font-family: var(--font-family-mono) !important;
+
+  .ordo2:hover,
+  .ordo2:focus,
+  .vk-btn.vk-sf-a,
+  .tAzJq:hover,
+  .kgnlhe.FwR7Pc,
+  .MtFg0.FwR7Pc,
+  .qSb8Pe:hover,
+  .jCAhz.C1N51c,
+  .jCAhz:hover,
+  .JLqJ4b.C1N51c,
+  .JLqJ4b:hover,
+  .Xcmxjb.FwR7Pc
+    background: var(--comment) !important;
+    color: var(--fg-primary) !important;
+
+
+  .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-TvZj5c-OWXEXe-M1Soyc,
+  .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-TvZj5c-OWXEXe-UbuQg,
+  .uqiNJb,
+  .AP34ab,
+  .pt8wXd,
+  .zRANPd:not(:disabled),
+  .q6oraf .VfPpkd-rymPhb,
+  .vxsGZ,
+  .HswdMd,
+  .mTQVx,
+  .ZQWYD,
+  .aWlm2e,
+  .irVajb,
+  .cfWmIb:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-wGMbrd,
+  .aia4Ud,
+  .ita-kd-menuitem,
+  .vk-btn,
+  .ita-hwt-candidate,
+  .XMNbjd,
+  .VK4HE:hover .dPxysd,
+  .VK4HE:focus .dPxysd,
+  .qTO0c:hover .dPxysd,
+  .qTO0c:focus .dPxysd,
+  .ordo2,
+  .KskmCc,
+  .AarNVd,
+  .MXuJQd,
+  .KmsAmb .tL9Q4c,
+  .uNr6ee,
+  .fEU59c,
+  .v2OCrb,
+  .WFnNle,
+  .qSb8Pe,
+  .NqnNQd,
+  .lRu31,
+  .lrSgmd
+    color: var(--fg-primary) !important;
+
+  button,
+  .VlPnLc svg,           /** footer **/
+  .TcXXXb
+    color: var(--blue) !important;
+  .EYBmYc                /** history **/
+  .kgJkHd                /** saved **/
+    color: var(--yellow) !important;
+  .ZihNHd.EmpJsc > span > .NMm5M
+    color: var(--hints) !important;
+
+  .eIKIse,               /** ╮ Noun, Verb, ... **/
+  .jq25U                 /** ╯                 **/
+    color: var(--yellow) !important;
+
+  .U8K5nb
+    background: var(--blue) !important;
+    color: var(--on-accent) !important;
+    border: 1px solid var(--blue) !important;
+
+  /** More translations **/
+  .ydsGXd
+    background-color: var(--bg-primary) !important;
+    color: var(--blue) !important;
+
+  div.sbtc,
+  .gsfi,
+  .lst
+    font-family: var(--font-family-mono) !important;
+
+  .g,
+  .std,
+  a.k8XOCe *,
+  a.fl,
+  div.ZOyvub,
+  div.m0uvVb *,
+  div.P1usbc *,
+  .wrBvFf > a,
+  .HiHjCd > a,
+  cite.iUh30,
+  cite.iUh30 > span,
+  span.go,
+  table.CFNMfb *
+    font-family: var(--font-family-sans) !important;
+
+  .wrBvFf > a,
+  .HiHjCd > a,
+  cite.iUh30,
+  cite.iUh30 > span,
+  span.go
+    font-size: 14px !important;
+
+  .FvchS
+    position: relative;
+
+  /**
+   * button of `Text`, `Images`, `Documents`, `Websites`
+   * can hidden via `.hgbeOc { visibility: hidden; }`
+  **/
+  /* button-group */
+  .Rj2Mlf:not(:disabled),
+  .gwGW9e
+    background-color: var(--chip-bg) !important;
+
+  /** search languages activated **/
+  .qSb8Pe.KKjvXb
+    background-color: var(--bg-primary) !important;
+    color: var(--green) !important;
+
+
+  .a88hkc,               /** feedback-link **/
+  .gHNJvf,               /** voice-input-button **/
+  .nidPne,               /** keyboard-ui-button **/
+  .vNTDhc                /** rate this translate **/
+    display: none
+
+  ::-webkit-scrollbar    /** scrollbar **/
+    background-color: var(--bg-secondary) !important;
+
+  span .VfPpkd-YVzG2b::after
+    color: var(--green) !important;
+
+  /** images search **/
+  .D7BEKc:focus-within .CQQi5b
+  .CQQi5b
+    background: var(--green) !important;
+  .FJCnk                 /** hr **/
+    border: 1px solid var(--cyan) !important;
+  .q7OsL,                /** board **/
+  .eTNoGb
+    border: none !important;
+  .rlWbvd,
+  .pu3MFc,
+  .uqt39c,
+  .LYeNu,
+  .sp2Bqb
+    background: var(--comment) !important;
+    color: var(--fg-primary) !important;
+  .zXU7Rb
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+
+  /** documents **/
+  .uqt39c,
+  .sp2Bqb,
+  .k5v5Nb
+    font-family: var(--font-family-sans) !important;
+
+  /** website **/
+  input#i48              /** cursor **/
+    caret-color: var(--fg-primary) !important;
+
+  body#yDmH0d > c-wiz > div > div:nth-child(2) > c-wiz > div:nth-child(4) > c-wiz > div:nth-child(3) > div > span > button:not(:disabled)
+    background-color: var(--chip-bg) !important;
+    color: var(--green) !important;
+
+  .VfPpkd-NLUYnc-V67aGc  /** Website placeholder **/
+    color: var(--fg-primary) !important;
+
+  /** input box boder **/
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-Brv4Fb,
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-Ra9xwd,
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-MpmGFe,
+  .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc
+    border-color: var(--gm-outlinedtextfield-outline-color--stateful,var(--fg-primary)) !important;
+
+  /** hover or select sentence **/
+  .WtlSJf:hover,
+  .Xcmxjb.FwR7Pc,
+  .jCAhz.C1N51c,
+  .jCAhz:hover
+    background-color: var(--bg-hover) !important;
+  .NWlwsb
+    background-color: var(--comment) !important;
+    color: var(--fg-primary) !important;
+    font-family: var(--font-family-mono) !important;
+    border: 1px solid unquote('color-mix(in srgb, var(--fg-secondary) 80%, transparent)');
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px 4px var(--bg-secondary) !important;
+  .WtlSJf.KKjvXb
+    background-color: var(--bg-third) !important;
+
+  /** see dictionary **/
+  .yP8PRe
+    color: var(--cyan) !important;
+  .AzGRq.VfPpkd-StrnGf-rymPhb-ibnC6b
+    border: 1px solid unquote('color-mix(in srgb, var(--fg-secondary) 80%, transparent)');
+    border-radius: 2px;
+
+  /** background color after click **/
+  span.jCAhz.ChMk0b.C1N51c
+    background-color: var(--bg-hover) !important;
+
+  .s0ijVb
+    background-color: var(--bg-primary) !important;
+  .rm1UF,
+  .QcsUad
+    border: 1px solid var(--bg-primary);
+    border-radius: 6px;
+    box-shadow: inset 0 0 3px 2px var(--comment) !important;
+
+  /** settings **/
+  .VfPpkd-xl07Ob-XxIAqe
+    color: var(--fg-primary);
+    background-color: var(--comment) !important;
+    border: 1px solid var(--bg-primary) !important;
+  .pWIpbc,
+  .Jp7KKb,
+  .XOPM0
+    color: var(--fg-primary);
+
+  /** expand all/collapse all **/
+  .qt6jm
+    border-top: 2px solid;
+    justify-content: flex-end;
+    padding: 0 16px;
+    background-color: var(--comment) !important;
+    border-radius: 8px;
+  .hX7wnb
+    background-color: var(--bg-primary) !important;
+
+  /** google menu **/
+  .gb_Ea:not(.gb_bc) .gb_1c>*
+    background-color: var(--bg-primary) !important;
+  .gb_Vc .gb_Qc, .vpl77
+    background-color: var(--bg-primary);
+    color: var(--fg-primary);
+    font-family: var(--font-family-sans);
