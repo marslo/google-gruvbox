@@ -20,5 +20,5 @@ extend-ignore-re = ['\[[0-9a-f]{7,40}\]\(https?://[^)]*/commit/[0-9a-f]{7,40}\)'
 [default.extend-words]
 # <typo> = "<correction>"
 Ue = "Ue"
-# `postcss-styl`: stylus syntax for stylelint
+# `postcss-styl` ( stylus syntax for stylelint ), still referenced in CHANGELOG.md
 styl = "styl"

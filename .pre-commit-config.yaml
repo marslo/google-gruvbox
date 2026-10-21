@@ -49,8 +49,6 @@ repos:
         name: Stylelint
         additional_dependencies:
           - 'stylelint@17.11.0'
-          # `*.user.css` are written in stylus indent syntax ( `@preprocessor stylus` )
-          - 'postcss-styl@0.12.3'
         args: ['--fix']
         files: '\.css$'
 
