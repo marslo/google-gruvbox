@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Google GruvBox (marslo)
-@version        1.0.20
+@version        1.0.21
 @namespace      github.com/marslo
 @description    Gruvbox dark theme for google search and translate. inhered from: https://github.com/touhidulshawan/gruvbox-google
 @preprocessor   stylus
@@ -230,7 +230,7 @@
     color: var(--bg-primary)
 
   .EZRelc .HbX59e
-    color: var(--commnet);
+    color: var(--comment);
 
   cite
     color: var(--yellow) !important;
@@ -438,7 +438,7 @@
     border-color: var(--green) !important;
 
   .X4DQ0:after           /** textarea>header>scroll-fade **/
-    background: linear-gradient(to right, transparant, var(--fg-primary));
+    background: linear-gradient(to right, transparent, var(--fg-primary));
 
   .U0xwnf::after
     background: transparent !important;
@@ -503,7 +503,6 @@
 
   .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-TvZj5c-OWXEXe-M1Soyc,
   .VfPpkd-fmcmS-yrriRe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-fmcmS-TvZj5c-OWXEXe-UbuQg,
-  .uqiNJb,
   .uqiNJb,
   .AP34ab,
   .pt8wXd,
@@ -663,7 +662,6 @@
   .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-Ra9xwd,
   .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NSFCdd-MpmGFe,
   .cfWmIb.VfPpkd-fmcmS-yrriRe-OWXEXe-XpnDCe:not(.VfPpkd-fmcmS-yrriRe-OWXEXe-OWB6Me) .VfPpkd-NLUYnc-V67aGc
-    border-color: var(--fg-primary) !important;
     border-color: var(--gm-outlinedtextfield-outline-color--stateful,var(--fg-primary)) !important;
 
   /** hover or select sentence **/
@@ -712,7 +710,7 @@
     color: var(--fg-primary);
 
   /** expand all/collapse all **/
- .qt6jm
+  .qt6jm
     border-top: 2px solid;
     justify-content: flex-end;
     padding: 0 16px;
