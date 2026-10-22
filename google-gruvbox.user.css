@@ -22,6 +22,8 @@
     --orange: #d65d0e;
     --fg-primary: #d5c4a1;
     --fg-secondary: #a89984;
+    --bg-hover: #504945;
+    --on-accent: var(--bg-primary);
     --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font";
   }
@@ -49,6 +51,103 @@
   code,
   textarea {
     font-family: var(--font-family-mono) !important;
+  }
+
+  /** ai mode input: textarea + mirrored caret ( `data-before` / `data-after` ) **/
+  .Txyg0d,
+  .Txyg0d .ITIRGe,
+  .Txyg0d .CEpIFc,
+  .Txyg0d .CEpIFc::before,
+  .Txyg0d .CEpIFc::after {
+    font-family: var(--font-family-mono) !important;
+  }
+
+  /** ai mode: remap google color tokens ( redeclared per component, hence `*` + `!important` ) **/
+  * {
+    --bbQxAb: var(--fg-primary) !important;
+    --YLNNHc: var(--fg-primary) !important;
+    --jINu6c: var(--fg-primary) !important;
+    --TMYS9: var(--fg-primary) !important;
+    --VuZXBd: var(--fg-primary) !important;
+    --ZXiaGf: var(--bg-primary) !important;
+    --IXoxUe: var(--fg-secondary) !important;
+    --uLz37c: var(--fg-secondary) !important;
+    --amnPwe: var(--fg-secondary) !important;
+    --JKqx2: var(--blue) !important;
+    --rrJJUc: var(--blue) !important;
+    --TyVYld: var(--blue) !important;
+    --xhUGwc: var(--bg-primary) !important;
+    --CwQ7J: var(--bg-primary) !important;
+    --XKMDxc: var(--comment) !important;
+    --DEeStf: var(--comment) !important;
+    --vZe0jb: var(--comment) !important;
+    --nwXobb: var(--comment) !important;
+    --QWaaaf: var(--comment) !important;
+    --ZEpPmd: var(--comment) !important;
+    --aYn2S: var(--bg-third) !important;
+    --TSWZIb: var(--bg-third) !important;
+    --gS5jXb: var(--bg-third) !important;
+    --mXZkqc: var(--bg-third) !important;
+    --Lm570b: var(--bg-hover) !important;
+    --BRLwE: var(--bg-hover) !important;
+    --Nsm0ce: var(--blue) !important;
+    --EpFNW: var(--on-accent) !important;
+  }
+
+  /** ai mode: hardcoded sidebar / input chip backgrounds **/
+  .qEn1od,
+  .ho072b {
+    background-color: var(--bg-secondary) !important;
+  }
+  /* sidebar thread list: `.u987h` item, `.cp7uzb` current */
+  .u987h:hover {
+    background-color: color-mix(in srgb, var(--bg-hover) 60%, var(--bg-secondary)) !important;
+  }
+  .u987h.cp7uzb,
+  .u987h.cp7uzb:hover {
+    background-color: var(--bg-hover) !important;
+  }
+  /* sidebar thread `...` menu ( `.XGxljc` ): share / add to notebook ( `.QJP0n` submenu open ) / delete */
+  .zJrqFf .eGAasd:hover,
+  .zJrqFf .eGAasd:focus-visible,
+  .FzQJwc:hover,
+  .FzQJwc:focus-visible,
+  .FzQJwc.QJP0n,
+  .w7Y0zd:hover,
+  .w7Y0zd:focus-visible {
+    background-color: var(--bg-hover) !important;
+  }
+  .hhGtFb::after,
+  .sisB6e::after {
+    background-color: var(--bg-hover);
+  }
+
+  /** ai mode: widen top nav, response column and input plate to 85vw **/
+  .DZ13He .P3mIxe {
+    grid-column: 1 / -1 !important;
+    justify-self: center;
+    width: 85vw !important;
+    max-width: none !important;
+  }
+  .WzWwpc .Rty6Hf {
+    grid-column: 1 / -1 !important;
+    justify-self: center;
+    width: 85vw !important;
+    --CYi3c--fRcLaf: 100%;
+  }
+  .Rty6Hf .mZJni,
+  .Rty6Hf .TWKprf,
+  .Rty6Hf .uU6vme {
+    max-width: none !important;
+  }
+  .Rty6Hf .ilZyRc {
+    max-width: calc(100% - var(--rhs-width, 372px) - var(--rhs-margin, 76px)) !important;
+  }
+  .y4VEUd .t0ITR:not(.AkYNS) {
+    grid-column: 1 / -1 !important;
+    justify-self: center;
+    width: calc(85vw + 40px) !important;
+    max-width: none !important;
   }
 
 
