@@ -38,7 +38,8 @@
         "user-query-content",
         "model-response",
         "message-viewer",
-        "c-wiz"
+        "c-wiz",
+        "g-menu-item"
       ]
     }],
     "no-descending-specificity": null,

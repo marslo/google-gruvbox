@@ -2,9 +2,9 @@
 
 [gruvbox](https://github.com/morhetz/gruvbox) and [gruvbox-material](https://github.com/sainnhe/gruvbox-material) themes for Google Search ( including AI Mode ) and Google Translate.
 
-|                                          SEARCH                                         |                                           TRANSLATE                                           |
-| :-------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
-| [![](./screenshots/gruvbox-google-search.png)](./screenshots/gruvbox-google-search.png) | [![](./screenshots/gruvbox-google-translate.png)](./screenshots/gruvbox-google-translate.png) |
+|               Google GruvBox Redux<br>Translate (light) · Search (dark)               |           Google GruvBox Material<br>Translate (light hard) · Search (dark medium)          |
+| :-----------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
+| [![](./screenshots/google-gruvbox-redux.png)](./screenshots/google-gruvbox-redux.png) | [![](./screenshots/google-gruvbox-material.png)](./screenshots/google-gruvbox-material.png) |
 
 ## Installation
 
@@ -24,6 +24,10 @@
 > Match Google's own appearance setting to the palette ( dark palette → Google dark mode, light palette → Google light mode ) — elements not covered by the style keep Google's colors.
 
 ## Palettes
+
+|                 Google GruvBox Redux                |                 Google GruvBox Material                |
+| :-------------------------------------------------: | :----------------------------------------------------: |
+| ![](./screenshots/google-gruvbox-redux-palette.png) | ![](./screenshots/google-gruvbox-material-palette.png) |
 
 Switch in Stylus: style ⚙ **Configure** → `Palette`.
 
@@ -47,10 +51,11 @@ Switch in Stylus: style ⚙ **Configure** → `Palette`.
 
 ## Scope
 
-| SECTION          | MATCH                                     |
-| ---------------- | ----------------------------------------- |
-| Google Search    | `domain("www.google.com")`                |
-| Google Translate | `url-prefix("https://translate.google.")` |
+| SECTION                                      | MATCH                                                                                              |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Google Search                                | `domain("www.google.com")`                                                                         |
+| Google bar popups ( app launcher / account ) | `url-prefix("https://ogs.google.com/")`, scoped to `html[stylus-iframe^="https://www.google.com"]` |
+| Google Translate                             | `url-prefix("https://translate.google.")`                                                          |
 
 ### AI Mode
 

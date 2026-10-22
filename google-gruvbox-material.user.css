@@ -96,6 +96,9 @@
     --jwFC2e: color-mix(in srgb, var(--blue) 35%, var(--bg-primary)) !important;
     --xhUGwc: var(--bg-primary) !important;
     --CwQ7J: var(--bg-primary) !important;
+    --cIehld: var(--bg-primary) !important;
+    --MV2sG: var(--comment) !important;
+    --bcxd3b: var(--fg-primary) !important;
     --XKMDxc: var(--comment) !important;
     --DEeStf: var(--comment) !important;
     --vZe0jb: var(--comment) !important;
@@ -291,6 +294,29 @@
   .minidiv .sfbg {
     background: var(--bg-secondary);
   }
+  /* sticky header after scroll ( `.VHFyob`, background from unmapped `--cIehld` ) */
+  .VHFyob .CvDJxb {
+    background: var(--bg-secondary) !important;
+  }
+  /* "people also search for" chips ( `.b2Rnsc`, hardcoded `#f1f3f4` / text `#e8e8e8` ) */
+  .b2Rnsc {
+    background: var(--comment) !important;
+  }
+  .b2Rnsc:hover {
+    background: var(--bg-third) !important;
+  }
+  .b2Rnsc .dg6jd {
+    color: var(--fg-primary) !important;
+  }
+  /* "view all" / "show more" pill ( `.ZFiwCf` ), hardcoded variants `#2c2e35` / `#373839` */
+  .MagqMc .ZFiwCf,
+  .sOmPcf .ZFiwCf {
+    background-color: var(--comment) !important;
+    border-color: var(--bg-third) !important;
+  }
+  .ZFiwCf:hover::after {
+    background-color: color-mix(in srgb, var(--fg-primary) 10%, transparent) !important;
+  }
 
   .g,
   .ssJ7i,
@@ -442,10 +468,13 @@
   }
 
   /* google.com home: search box, suggestion dropdown and buttons ( `!important` + extra specificity to beat glass-style overrides ) */
-  .emcav .RNNXgb,
+  .A8SBwf .RNNXgb,
   .UUbT9 .aajZCb {
     background: var(--bg-primary) !important;
     border-color: var(--cyan) !important;
+  }
+  .plR5qb .bvUkz {
+    background: var(--bg-third) !important;
   }
   .aajZCb .sbct:hover,
   .aajZCb .sbhl {
@@ -471,6 +500,42 @@
     border: 1px solid var(--orange) !important;
   }
 
+  /* google.com home: settings popup ( `g-menu-item` ), items + links share the menu text color */
+  g-menu-item,
+  g-menu-item [role="menuitem"],
+  g-menu-item [role="link"],
+  g-menu-item span,
+  g-menu-item a:link,
+  g-menu-item a:visited {
+    color: var(--fg-primary) !important;
+  }
+  g-menu-item:hover {
+    background-color: var(--bg-hover) !important;
+  }
+
+  /* google bar popups ( app launcher / account, `ogs.google.com` iframes pinned to `color-scheme: light` ): follow the palette's color-scheme */
+  iframe[name="app"],
+  iframe[name="account"] {
+    color-scheme: inherit !important;
+  }
+
+  /* input `+` menu ( `.oMByyf` ): add files / tools / model items ( `.izN7If` ), `+` button ( `.UbbAWe` ) and its tooltips ( `.kL6Qgd` ) */
+  .oMByyf .izN7If {
+    color: var(--fg-primary) !important;
+  }
+  .oMByyf .izN7If:hover:not(:disabled),
+  .oMByyf .izN7If:focus:not(:disabled),
+  .UbbAWe:hover,
+  .KWUYAe .UbbAWe {
+    background: var(--bg-hover) !important;
+  }
+  .kL6Qgd,
+  .kL6Qgd .BMWI7d {
+    background: var(--fg-primary) !important;
+    color: var(--bg-primary) !important;
+    border-color: transparent !important;
+  }
+
   .oIVYJb.FR7ZSc.k0Jjg .niO4u,
   .in7vHe.FR7ZSc.k0Jjg .niO4u,
   .rAzITb.FR7ZSc.k0Jjg .niO4u,
@@ -484,6 +549,15 @@
     background-color: var(--bg-third) !important;
   }
 
+  /* "show more" pill button ( `.FR7ZSc` ) text, e.g. below ai overview */
+  .in7vHe.FR7ZSc,
+  .FR7ZSc .niO4u {
+    color: var(--fg-primary) !important;
+  }
+  .FR7ZSc .niO4u {
+    border-color: var(--bg-third) !important;
+  }
+
   .oTiGzc, .yQLaje {
     font-family: var(--font-family-mono) !important;
   }
@@ -495,6 +569,106 @@
     background-color: transparent !important;
   }
 } /* @-moz-document: domain(www.google.com) */
+
+@-moz-document url-prefix("https://ogs.google.com/") {
+  /* google bar popups ( app launcher / account iframes ), only when embedded by www.google.com ( `stylus-iframe` ) */
+  html[stylus-iframe^="https://www.google.com"] {
+    color-scheme: dark;
+    --bg-primary: #1d2021;
+    --bg-secondary: #141617;
+    --bg-third: #3c3836;
+    --bg-hover: #504945;
+    --comment: #282828;
+    --fg-primary: #d4be98;
+    --fg-secondary: #a89984;
+    --red: #ea6962;
+    --green: #a9b665;
+    --yellow: #d8a657;
+    --blue: #7daea3;
+    --magenta: #d3869b;
+    --cyan: #89b482;
+    --orange: #e78a4e;
+    --hints: color-mix(in srgb, var(--yellow) 80%, var(--fg-secondary));
+    --on-accent: var(--bg-primary);
+    --chip-bg: #d4be98;
+    --on-chip: var(--bg-primary);
+    --icon-filter: invert(1);
+    --font-family-sans: "Titillium Nerd Font Upright", "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
+    --font-family-mono: "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font";
+  }
+  /* gruvbox-material, foreground `material`: `dark` + `hard` above, other palettes via `@var select palette` ( https://github.com/sainnhe/gruvbox-material/blob/master/autoload/gruvbox_material.vim ) */
+  /*[[palette]]*/
+
+  /* gm3 color tokens ( redeclared per component, hence `*` + `!important` ) */
+  html[stylus-iframe^="https://www.google.com"],
+  html[stylus-iframe^="https://www.google.com"] * {
+    --gm3-sys-color-background: var(--bg-secondary) !important;
+    --gm3-sys-color-surface: var(--bg-primary) !important;
+    --gm3-sys-color-surface-container-lowest: var(--bg-primary) !important;
+    --gm3-sys-color-surface-container: var(--bg-secondary) !important;
+    --gm3-sys-color-surface-container-low: var(--bg-primary) !important;
+    --gm3-sys-color-surface-dim: var(--bg-secondary) !important;
+    --gm3-sys-color-surface-bright: var(--bg-third) !important;
+    --gm3-sys-color-surface-container-high: var(--comment) !important;
+    --gm3-sys-color-surface-container-highest: var(--bg-third) !important;
+    --gm3-sys-color-surface-variant: var(--bg-third) !important;
+    --gm3-sys-color-surface-tint: var(--blue) !important;
+    --gm3-sys-color-on-surface: var(--fg-primary) !important;
+    --gm3-sys-color-on-surface-variant: var(--fg-secondary) !important;
+    --gm3-sys-color-on-background: var(--fg-primary) !important;
+    --gm3-sys-color-primary: var(--blue) !important;
+    --gm3-sys-color-on-primary: var(--on-accent) !important;
+    --gm3-sys-color-inverse-primary: var(--blue) !important;
+    --gm3-sys-color-primary-container: var(--bg-third) !important;
+    --gm3-sys-color-on-primary-container: var(--fg-primary) !important;
+    --gm3-sys-color-on-primary-fixed-variant: var(--fg-primary) !important;
+    --gm3-sys-color-secondary: var(--cyan) !important;
+    --gm3-sys-color-secondary-container: var(--bg-third) !important;
+    --gm3-sys-color-on-secondary-container: var(--fg-primary) !important;
+    --gm3-sys-color-outline: var(--bg-hover) !important;
+    --gm3-sys-color-outline-variant: var(--bg-third) !important;
+    --gm3-sys-color-hairline: var(--bg-third) !important;
+    --gm3-sys-color-error: var(--red) !important;
+    --gm3-sys-color-on-error: var(--on-accent) !important;
+    --gm3-sys-color-inverse-surface: var(--fg-primary) !important;
+    --gm3-sys-color-inverse-on-surface: var(--bg-primary) !important;
+  }
+  html[stylus-iframe^="https://www.google.com"],
+  html[stylus-iframe^="https://www.google.com"] body {
+    background: transparent !important;
+    color: var(--fg-primary) !important;
+  }
+
+  /* hardcoded light colors ( no gm3 token ): app item hover / focus, account small buttons + badges, scrollbar thumb */
+  html[stylus-iframe^="https://www.google.com"] .tX9u1b:hover,
+  html[stylus-iframe^="https://www.google.com"] .tX9u1b:hover .Rq5Gcb,
+  html[stylus-iframe^="https://www.google.com"] .tX9u1b:focus,
+  html[stylus-iframe^="https://www.google.com"] .tX9u1b:focus .Rq5Gcb,
+  html[stylus-iframe^="https://www.google.com"] .tX9u1b:active {
+    background-color: var(--bg-hover) !important;
+  }
+  html[stylus-iframe^="https://www.google.com"] .MIO7jc,
+  html[stylus-iframe^="https://www.google.com"] .WxrWcf,
+  html[stylus-iframe^="https://www.google.com"] .G5bXNb,
+  html[stylus-iframe^="https://www.google.com"] .N6gx9b,
+  html[stylus-iframe^="https://www.google.com"] .UVTdcf,
+  html[stylus-iframe^="https://www.google.com"] .Kjnxrf:not(:disabled) {
+    background: var(--bg-third) !important;
+    color: var(--fg-primary) !important;
+  }
+  html[stylus-iframe^="https://www.google.com"] ::-webkit-scrollbar-thumb {
+    background-color: var(--bg-hover) !important;
+  }
+  /* account footer links ( privacy policy / terms of service, `.Z6NXed` hardcoded `#303030` ) */
+  html[stylus-iframe^="https://www.google.com"] .Z6NXed {
+    color: var(--fg-secondary) !important;
+  }
+  html[stylus-iframe^="https://www.google.com"] .Z6NXed:hover,
+  html[stylus-iframe^="https://www.google.com"] .Z6NXed:active {
+    color: var(--fg-primary) !important;
+    background: color-mix(in srgb, var(--fg-primary) 10%, transparent) !important;
+  }
+} /* @-moz-document: ogs.google.com */
 
 @-moz-document url-prefix("https://translate.google.") {
   html {
@@ -523,6 +697,43 @@
   }
   /* gruvbox-material, foreground `material`: `dark` + `hard` above, other palettes via `@var select palette` ( https://github.com/sainnhe/gruvbox-material/blob/master/autoload/gruvbox_material.vim ) */
   /*[[palette]]*/
+
+  /* gm3 color tokens ( redeclared per component, hence `*` + `!important` ) */
+  * {
+    --gm3-sys-color-background: var(--bg-secondary) !important;
+    --gm3-sys-color-surface: var(--bg-primary) !important;
+    --gm3-sys-color-surface-container-lowest: var(--bg-primary) !important;
+    --gm3-sys-color-surface-container: var(--bg-secondary) !important;
+    --gm3-sys-color-surface-container-low: var(--bg-primary) !important;
+    --gm3-sys-color-surface-dim: var(--bg-secondary) !important;
+    --gm3-sys-color-surface-bright: var(--bg-third) !important;
+    --gm3-sys-color-surface-container-high: var(--comment) !important;
+    --gm3-sys-color-surface-container-highest: var(--bg-third) !important;
+    --gm3-sys-color-surface-variant: var(--bg-third) !important;
+    --gm3-sys-color-surface-tint: var(--blue) !important;
+    --gm3-sys-color-on-surface: var(--fg-primary) !important;
+    --gm3-sys-color-on-surface-variant: var(--fg-secondary) !important;
+    --gm3-sys-color-on-background: var(--fg-primary) !important;
+    --gm3-sys-color-primary: var(--blue) !important;
+    --gm3-sys-color-on-primary: var(--on-accent) !important;
+    --gm3-sys-color-inverse-primary: var(--blue) !important;
+    --gm3-sys-color-primary-container: var(--bg-third) !important;
+    --gm3-sys-color-on-primary-container: var(--fg-primary) !important;
+    --gm3-sys-color-on-primary-fixed-variant: var(--fg-primary) !important;
+    --gm3-sys-color-secondary: var(--cyan) !important;
+    --gm3-sys-color-secondary-container: var(--bg-third) !important;
+    --gm3-sys-color-on-secondary-container: var(--fg-primary) !important;
+    --gm3-sys-color-outline: var(--bg-hover) !important;
+    --gm3-sys-color-outline-variant: var(--bg-third) !important;
+    --gm3-sys-color-hairline: var(--bg-third) !important;
+    --gm3-sys-color-error: var(--red) !important;
+    --gm3-sys-color-on-error: var(--on-accent) !important;
+    --gm3-sys-color-inverse-surface: var(--fg-primary) !important;
+    --gm3-sys-color-inverse-on-surface: var(--bg-primary) !important;
+    --gm3-sys-color-tertiary: var(--magenta) !important;
+    --gm3-sys-color-tertiary-container: var(--bg-third) !important;
+    --gm3-sys-color-error-container: var(--bg-third) !important;
+  }
 
   *:before,
   *:after {
@@ -646,8 +857,11 @@
     background-color: var(--comment) !important;
   }
 
-  /** textarea>button-selected **/
-  .VfPpkd-AznF2e-LUERP-bN97Pc .VfPpkd-AznF2e-OWXEXe-auswjd,
+  /** textarea>button-selected: underline only, no background block **/
+  .VfPpkd-AznF2e-LUERP-bN97Pc .VfPpkd-AznF2e-OWXEXe-auswjd:not(:hover):not(:active) {
+    background-color: transparent !important;
+  }
+
   /**textarea>button:active **/
   .VfPpkd-AznF2e-LUERP-bN97Pc button:active,
   /** textarea>button-font:active **/
@@ -852,11 +1066,20 @@
    * button of `Text`, `Images`, `Documents`, `Websites`
    * can hidden via `.hgbeOc { visibility: hidden; }`
   **/
-  /* button-group */
-  .Rj2Mlf:not(:disabled),
+  /* button-group: outlined, current mode ( `aria-current="page"` ) filled */
+  .Rj2Mlf:not(:disabled) {
+    background-color: transparent !important;
+    border-color: var(--bg-hover) !important;
+    color: var(--fg-primary) !important;
+  }
+  .Rj2Mlf:not(:disabled):hover {
+    background-color: var(--comment) !important;
+  }
+  .Rj2Mlf[aria-current="page"]:not(:disabled),
   .gwGW9e {
-    background-color: var(--chip-bg) !important;
-    color: var(--on-chip) !important;
+    background-color: var(--cyan) !important;
+    border-color: var(--cyan) !important;
+    color: var(--on-accent) !important;
   }
 
   /** search languages activated **/
