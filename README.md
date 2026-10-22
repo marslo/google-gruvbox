@@ -11,11 +11,11 @@
 1. install [Stylus](https://github.com/openstyles/stylus): [Chrome](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) | [Firefox](https://addons.mozilla.org/firefox/addon/styl-us/) | [Edge](https://microsoftedge.microsoft.com/addons/detail/stylus/dmcfbglnmkadeibaoelljihicilhlnjd)
 2. click to install one of the styles:
 
-| STYLE                                    | PALETTE                                                                     | INSTALL                                                                                                                                                                          |
-| ---------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Google GruvBox Material                  | [gruvbox-material](https://github.com/sainnhe/gruvbox-material), 6 palettes | 📦 [google-gruvbox-material.user.css](https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox-material.user.css)                                                        |
-| Google GruvBox Redux                     | [gruvbox](https://github.com/morhetz/gruvbox) dark                          | 📦 [google-gruvbox.user.css](https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox.user.css) \| [userstyles.world](https://userstyles.world/api/style/12346.user.css) |
-| Gruvbox Google ( upstream, search only ) | [gruvbox](https://github.com/morhetz/gruvbox) dark                          | 📦 [userstyles.world](https://userstyles.world/api/style/7350.user.css) — by [Touhidul Shawan](https://userstyles.world/style/7350/gruvbox-google)                               |
+| STYLE                                    | PALETTE                                                                     | GITHUB                                                                                                                    | USERSTYLES.WORLD                                                                                                                                              |
+| ---------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Google GruvBox Material                  | [gruvbox-material](https://github.com/sainnhe/gruvbox-material), 6 palettes | 📦 [google-gruvbox-material.user.css](https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox-material.user.css) | 📦 [install](https://userstyles.world/api/style/30994.user.css) \| [userstyles.world](https://userstyles.world/style/30994/google-gruvbox-material)           |
+| Google GruvBox Redux                     | [gruvbox](https://github.com/morhetz/gruvbox), dark / light                 | 📦 [google-gruvbox.user.css](https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox.user.css)                   | 📦 [install](https://userstyles.world/api/style/12346.user.css) \| [userstyles.world](https://userstyles.world/style/12346/google-gruvbox-redux)              |
+| Gruvbox Google ( upstream, search only ) | [gruvbox](https://github.com/morhetz/gruvbox) dark                          | —                                                                                                                         | 📦 [install](https://userstyles.world/api/style/7350.user.css) \| [userstyles.world](https://userstyles.world/style/7350/gruvbox-google) — by Touhidul Shawan |
 
 > [!NOTE]
 > Enable only one of them at a time — they style the same elements.
@@ -25,7 +25,16 @@
 
 ## Palettes
 
-`google-gruvbox-material.user.css` — switch in Stylus: style ⚙ **Configure** → `Palette`.
+Switch in Stylus: style ⚙ **Configure** → `Palette`.
+
+`google-gruvbox.user.css` ( Redux ):
+
+| `Palette`          | BACKGROUND | FOREGROUND |
+| ------------------ | ---------- | ---------- |
+| `Dark` ( default ) | `#282828`  | `#d5c4a1`  |
+| `Light`            | `#fbf1c7`  | `#3c3836`  |
+
+`google-gruvbox-material.user.css` ( Material ):
 
 | `Palette`               | BACKGROUND | FOREGROUND |
 | ----------------------- | ---------- | ---------- |
@@ -69,7 +78,7 @@ Styled within the Google Search section ( `domain("www.google.com")` ).
 - both share `@namespace github.com/marslo`; `@updateURL` points to the raw file on `main`
 - the `ai mode: …` blocks in the Google Search section are identical in both files — edit them together
 - `google-gruvbox-material.user.css` keeps the same rules as `google-gruvbox.user.css`; only the palette differs:
-  - the `Dark Hard` palette is defined in each section's `html { … }` block ( `--bg-primary`, `--fg-primary`, `--blue`, … )
+  - the default palette ( Redux `Dark`, Material `Dark Hard` ) is defined in each section's `html { … }` block ( `--bg-primary`, `--fg-primary`, `--blue`, … )
   - other palettes are `@var select palette` options, expanded by the Stylus `uso` preprocessor into an `html:root { … }` override at `/*[[palette]]*/`
 
 > [!IMPORTANT]

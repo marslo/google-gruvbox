@@ -2,31 +2,44 @@
 @name           Google GruvBox Redux
 @namespace      github.com/marslo
 @version        2.0.2
-@description    Gruvbox dark theme for google search ( incl. ai mode ) and translate. inherited from: https://github.com/touhidulshawan/gruvbox-google
+@description    Gruvbox ( dark / light ) theme for google search ( incl. ai mode ) and translate. inherited from: https://github.com/touhidulshawan/gruvbox-google
 @author         Touhidul Shawan ( Google Search ) · Marslo Jiao ( Google Translate · AI Mode )
 @homepageURL    https://github.com/marslo/google-gruvbox
 @updateURL      https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox.user.css
+@preprocessor   uso
+@var select     palette "Palette" {
+  "Dark*": "html:root { --gruv-palette: dark; }",
+  "Light": "html:root { --gruv-palette: light; color-scheme: light; --bg-primary: #fbf1c7; --bg-secondary: #f9f5d7; --bg-third: #ebdbb2; --bg-hover: #d5c4a1; --comment: #f2e5bc; --fg-primary: #3c3836; --fg-secondary: #7c6f64; --red: #9d0006; --green: #79740e; --yellow: #b57614; --blue: #076678; --magenta: #8f3f71; --cyan: #427b58; --orange: #af3a03; --hints: #b57614; --chip-bg: #d5c4a1; --on-chip: var(--fg-primary); --icon-filter: none; }"
+}
 ==/UserStyle== */
 
 @-moz-document domain("www.google.com") {
   html {
+    color-scheme: dark;
     --bg-primary: #282828;
     --bg-secondary: #1d2021;
     --bg-third: #3c3836;
+    --bg-hover: #504945;
     --comment: #32302f;
+    --fg-primary: #d5c4a1;
+    --fg-secondary: #a89984;
     --red: #cc241d;
+    --green: #98971a;
     --yellow: #d79921;
     --blue: #458588;
     --magenta: #b16286;
     --cyan: #689d6a;
     --orange: #d65d0e;
-    --fg-primary: #d5c4a1;
-    --fg-secondary: #a89984;
-    --bg-hover: #504945;
+    --hints: #af8d11;
     --on-accent: var(--bg-primary);
+    --chip-bg: #d5c4a1;
+    --on-chip: var(--bg-primary);
+    --icon-filter: invert(1);
     --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font";
   }
+  /* gruvbox `dark` above, `light` via `@var select palette` ( https://github.com/morhetz/gruvbox ) */
+  /*[[palette]]*/
 
   body,
   #hdtbSum,
@@ -208,7 +221,7 @@
   }
 
   .RNNXgb:hover {
-    background: #303134;
+    background: var(--bg-third);
     border: 1px solid var(--cyan);
   }
 
@@ -312,7 +325,7 @@
   }
 
   .gb_0b {
-    filter: invert(1);
+    filter: var(--icon-filter);
   }
 
 
@@ -414,13 +427,13 @@
   /* button on google.com home */
   .gNO89b {
     background: var(--blue) !important;
-    color: var(--fg-primary) !important;
+    color: var(--on-accent) !important;
     border: 1px solid var(--blue) !important;
   }
 
   .RNmpXc {
     background: var(--orange) !important;
-    color: var(--comment) !important;
+    color: var(--on-accent) !important;
     border: 1px solid var(--orange) !important;
   }
 
@@ -428,13 +441,13 @@
   .in7vHe.FR7ZSc.k0Jjg .niO4u,
   .rAzITb.FR7ZSc.k0Jjg .niO4u,
   .X7yl2b.FR7ZSc.k0Jjg .niO4u {
-    background-color: var(--m3c6) !important;
-    border: 1px solid #303134 !important;
-    color: var(--m3c11) !important;
+    background-color: var(--comment) !important;
+    border: 1px solid var(--bg-third) !important;
+    color: var(--fg-primary) !important;
   }
 
   .rAzITb .niO4u .kHtcsd:hover {
-    background-color: var(--m3c7) !important;
+    background-color: var(--bg-third) !important;
   }
 
   .oTiGzc, .yQLaje {
@@ -442,7 +455,7 @@
   }
 
   .RDmXvc {
-    background-image: linear-gradient(transparent 0px,rgba(42,43,45,0.9) 52px,#282828 80px);
+    background-image: linear-gradient(transparent 0px, color-mix(in srgb, var(--bg-primary) 90%, transparent) 52px, var(--bg-primary) 80px);
   }
   .zNsLfb {
     background-color: transparent !important;
@@ -451,10 +464,14 @@
 
 @-moz-document url-prefix("https://translate.google.") {
   html {
+    color-scheme: dark;
     --bg-primary: #282828;
     --bg-secondary: #1d2021;
     --bg-third: #3c3836;
+    --bg-hover: #504945;
     --comment: #32302f;
+    --fg-primary: #d5c4a1;
+    --fg-secondary: #a89984;
     --red: #cc241d;
     --green: #98971a;
     --yellow: #d79921;
@@ -462,12 +479,16 @@
     --magenta: #b16286;
     --cyan: #689d6a;
     --orange: #d65d0e;
-    --fg-primary: #d5c4a1;
-    --fg-secondary: #a89984;
     --hints: #af8d11;
+    --on-accent: var(--bg-primary);
+    --chip-bg: #d5c4a1;
+    --on-chip: var(--bg-primary);
+    --icon-filter: invert(1);
     --font-family-sans: "Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium", "Google Sans", "Roboto", "Helvetica Neue", "arial", sans-serif;
     --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas", "monospace";
   }
+  /* gruvbox `dark` above, `light` via `@var select palette` ( https://github.com/morhetz/gruvbox ) */
+  /*[[palette]]*/
 
   *:before,
   *:after {
@@ -608,7 +629,7 @@
   }
 
   .X4DQ0:after {           /** textarea>header>scroll-fade **/
-    background: linear-gradient(to right, transparent, var(--fg-primary));
+    background: linear-gradient(to right, transparent, var(--bg-primary));
   }
 
   .U0xwnf::after {
@@ -749,7 +770,7 @@
 
   .U8K5nb {
     background: var(--blue) !important;
-    color: var(--fg-primary) !important;
+    color: var(--on-accent) !important;
     border: 1px solid var(--blue) !important;
   }
 
@@ -800,8 +821,8 @@
   /* button-group */
   .Rj2Mlf:not(:disabled),
   .gwGW9e {
-    background-color: var(--fg-primary) !important;
-    color: var(--bg-primary) !important;
+    background-color: var(--chip-bg) !important;
+    color: var(--on-chip) !important;
   }
 
   /** search languages activated **/
@@ -864,7 +885,7 @@
   }
 
   body#yDmH0d > c-wiz > div > div:nth-child(2) > c-wiz > div:nth-child(4) > c-wiz > div:nth-child(3) > div > span > button:not(:disabled) {
-    background-color: var(--fg-primary) !important;
+    background-color: var(--chip-bg) !important;
     color: var(--green) !important;
   }
 
@@ -885,15 +906,15 @@
   .Xcmxjb.FwR7Pc,
   .jCAhz.C1N51c,
   .jCAhz:hover {
-    background-color: #4e4947 !important;
+    background-color: var(--bg-hover) !important;
   }
   .NWlwsb {
     background-color: var(--comment) !important;
     color: var(--fg-primary) !important;
     font-family: var(--font-family-mono) !important;
-    border: 1px solid #888c;
+    border: 1px solid color-mix(in srgb, var(--fg-secondary) 80%, transparent);
     border-radius: 8px;
-    box-shadow: 1px 2px 8px 4px #282828 !important;
+    box-shadow: 1px 2px 8px 4px var(--bg-secondary) !important;
   }
   .WtlSJf.KKjvXb {
     background-color: var(--bg-third) !important;
@@ -904,13 +925,13 @@
     color: var(--cyan) !important;
   }
   .AzGRq.VfPpkd-StrnGf-rymPhb-ibnC6b {
-    border: 1px solid #888c;
+    border: 1px solid color-mix(in srgb, var(--fg-secondary) 80%, transparent);
     border-radius: 2px;
   }
 
   /** background color after click **/
   span.jCAhz.ChMk0b.C1N51c {
-    background-color: #4e4947 !important;
+    background-color: var(--bg-hover) !important;
   }
 
   .s0ijVb {
@@ -925,7 +946,7 @@
 
   /** settings **/
   .VfPpkd-xl07Ob-XxIAqe {
-    color: #ccc;
+    color: var(--fg-primary);
     background-color: var(--comment) !important;
     border: 1px solid var(--bg-primary) !important;
   }
