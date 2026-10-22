@@ -1,3 +1,29 @@
+## [2.1.0](https://github.com/marslo/google-gruvbox/compare/v2.0.2...v2.1.0) (2026-10-22)
+
+### Features
+
+* **google-search**: theme and widen google ai mode in both material and redux styles ([74e6241](https://github.com/marslo/google-gruvbox/commit/74e62419404e6f37a9567f7d4c7dc2f9bfa0016a))
+  - remap google ai mode color tokens to gruvbox palette vars
+  - recolor hardcoded sidebar, thread list and `...` menu highlights
+  - widen top nav, response column and input plate to `85vw`
+  - use mono font for ai mode input and add `--bg-hover` / `--on-accent` to redux
+  - prefer `Titillium Nerd Font Upright` in material sans font stack
+* **redux**, **palette**: add a dark / light palette switch to google gruvbox redux by porting the palette-aware material rules, and list userstyles.world installs in readme ([0e902d6](https://github.com/marslo/google-gruvbox/commit/0e902d62b49894f7d4732d3817d0b8e4ab21b3b2))
+  - add a `uso` `palette` select with gruvbox `Dark` ( default ) and `Light`
+  - port material's palette-aware rules, replacing hardcoded dark colors
+  - define the tokens shared rules need in each section's default palette
+  - document redux palettes and split install links into github / userstyles.world
+
+### Bug Fixes
+
+* **google-search**: drop empty result card frames and recolor ai highlights with gruvbox blue ([e400a8c](https://github.com/marslo/google-gruvbox/commit/e400a8c3ef526bf3245c316da16cf8dc6a239a8e))
+  - collapse `.MjjYud` cards with no visible content, including lazy-load placeholders
+  - map the `--jwFC2e` highlight token to gruvbox blue blended into the background
+
+### Documentation
+
+* **readme**, **meta**: document google ai mode across readme, userstyle headers and section comments ([704e1e8](https://github.com/marslo/google-gruvbox/commit/704e1e8bb12b6233a379cf67edb217de2847242b))
+
 ## [2.0.2](https://github.com/marslo/google-gruvbox/compare/v2.0.1...v2.0.2) (2026-10-21)
 
 ### Bug Fixes
