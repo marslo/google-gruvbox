@@ -2,8 +2,8 @@
 @name           Google GruvBox Redux
 @namespace      github.com/marslo
 @version        2.0.2
-@description    Gruvbox dark theme for google search and translate. inhered from: https://github.com/touhidulshawan/gruvbox-google
-@author         Touhidul Shawan ( Google Search ) · Marslo Jiao ( Google Translate )
+@description    Gruvbox dark theme for google search ( incl. ai mode ) and translate. inherited from: https://github.com/touhidulshawan/gruvbox-google
+@author         Touhidul Shawan ( Google Search ) · Marslo Jiao ( Google Translate · AI Mode )
 @homepageURL    https://github.com/marslo/google-gruvbox
 @updateURL      https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox.user.css
 ==/UserStyle== */
@@ -438,7 +438,7 @@
   .zNsLfb {
     background-color: transparent !important;
   }
-}
+} /* @-moz-document: domain(www.google.com) */
 
 @-moz-document url-prefix("https://translate.google.") {
   html {
@@ -972,4 +972,4 @@
     color: var(--fg-primary);
     font-family: var(--font-family-sans);
   }
-}
+} /* @-moz-document: translate.google */

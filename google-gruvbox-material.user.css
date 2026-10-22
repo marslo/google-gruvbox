@@ -2,7 +2,7 @@
 @name           Google GruvBox Material
 @namespace      github.com/marslo
 @version        2.0.2
-@description    gruvbox-material ( dark / light × hard / medium / soft ) theme for google search and translate
+@description    gruvbox-material ( dark / light × hard / medium / soft ) theme for google search ( incl. ai mode ) and translate
 @author         Marslo Jiao
 @homepageURL    https://github.com/marslo/google-gruvbox
 @updateURL      https://github.com/marslo/google-gruvbox/raw/main/google-gruvbox-material.user.css
@@ -455,7 +455,7 @@
   .zNsLfb {
     background-color: transparent !important;
   }
-}
+} /* @-moz-document: domain(www.google.com) */
 
 @-moz-document url-prefix("https://translate.google.") {
   html {
@@ -997,4 +997,4 @@
     color: var(--fg-primary);
     font-family: var(--font-family-sans);
   }
-}
+} /* @-moz-document: translate.google */

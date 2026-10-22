@@ -1,6 +1,6 @@
 # Google GruvBox
 
-[gruvbox](https://github.com/morhetz/gruvbox) and [gruvbox-material](https://github.com/sainnhe/gruvbox-material) themes for Google Search and Google Translate.
+[gruvbox](https://github.com/morhetz/gruvbox) and [gruvbox-material](https://github.com/sainnhe/gruvbox-material) themes for Google Search ( including AI Mode ) and Google Translate.
 
 |                                          SEARCH                                         |                                           TRANSLATE                                           |
 | :-------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
@@ -43,16 +43,31 @@
 | Google Search    | `domain("www.google.com")`                |
 | Google Translate | `url-prefix("https://translate.google.")` |
 
+### AI Mode
+
+Styled within the Google Search section ( `domain("www.google.com")` ).
+
+| AREA    | CHANGE                                                                                   |
+| ------- | ---------------------------------------------------------------------------------------- |
+| colors  | Google color tokens ( `--bbQxAb`, `--IXoxUe`, … ) remapped to the palette vars           |
+| layout  | top nav, response column and input box widened to `85vw`, centered                       |
+| sidebar | panel, current / hovered thread and the thread `...` menu use the palette                |
+| input   | prompt textarea uses `--font-family-mono`                                                |
+
+> [!WARNING]
+> AI Mode class names and color tokens are obfuscated by Google and may change without notice.
+
 ## Development
 
 - both styles are plain css ( `{}` syntax )
 
-| FILE                               | `@name`                 | `@author`                                                            |
-| ---------------------------------- | ----------------------- | -------------------------------------------------------------------- |
-| `google-gruvbox.user.css`          | Google GruvBox Redux    | Touhidul Shawan ( Google Search ) · Marslo Jiao ( Google Translate ) |
-| `google-gruvbox-material.user.css` | Google GruvBox Material | Marslo Jiao                                                          |
+| FILE                               | `@name`                 | `@author`                                                                      |
+| ---------------------------------- | ----------------------- | ------------------------------------------------------------------------------ |
+| `google-gruvbox.user.css`          | Google GruvBox Redux    | Touhidul Shawan ( Google Search ) · Marslo Jiao ( Google Translate · AI Mode ) |
+| `google-gruvbox-material.user.css` | Google GruvBox Material | Marslo Jiao                                                                    |
 
 - both share `@namespace github.com/marslo`; `@updateURL` points to the raw file on `main`
+- the `ai mode: …` blocks in the Google Search section are identical in both files — edit them together
 - `google-gruvbox-material.user.css` keeps the same rules as `google-gruvbox.user.css`; only the palette differs:
   - the `Dark Hard` palette is defined in each section's `html { … }` block ( `--bg-primary`, `--fg-primary`, `--blue`, … )
   - other palettes are `@var select palette` options, expanded by the Stylus `uso` preprocessor into an `html:root { … }` override at `/*[[palette]]*/`
@@ -62,7 +77,7 @@
 
 ## Credits
 
-- `google-gruvbox.user.css` ( Redux ): Google Search based on the original [Gruvbox Google](https://userstyles.world/style/7350/gruvbox-google) by [Touhidul Shawan](mailto:touhidulshawan@gmail.com) — [touhidulshawan/gruvbox-google](https://github.com/touhidulshawan/gruvbox-google); Google Translate by [Marslo Jiao](mailto:marslo.jiao@gmail.com)
+- `google-gruvbox.user.css` ( Redux ): Google Search based on the original [Gruvbox Google](https://userstyles.world/style/7350/gruvbox-google) by [Touhidul Shawan](mailto:touhidulshawan@gmail.com) — [touhidulshawan/gruvbox-google](https://github.com/touhidulshawan/gruvbox-google); Google Translate and Google AI Mode by [Marslo Jiao](mailto:marslo.jiao@gmail.com)
 - `google-gruvbox-material.user.css`: gruvbox-material palettes by [Marslo Jiao](mailto:marslo.jiao@gmail.com), built on the Redux rules
 - palettes: [morhetz/gruvbox](https://github.com/morhetz/gruvbox), [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material)
 - [MIT License](./LICENSE)
