@@ -1,3 +1,18 @@
+## [2.2.0](https://github.com/marslo/google-gruvbox/compare/v2.1.0...v2.2.0) (2026-10-22)
+
+### Features
+
+* **google-search**, **translate**: extend gruvbox theming to google bar popups, homepage menus, result widgets and translate panels, with refreshed readme screenshots ([c789f62](https://github.com/marslo/google-gruvbox/commit/c789f6262c1142c4b8f9fa7cc87bbca0c9406e93))
+  - add an `ogs.google.com` section for the app launcher / account popups, scoped via `stylus-iframe`
+  - theme homepage settings, input `+` menu, tooltips and the sticky header
+  - recolor show more / view all pills and related-search chips
+  - map gm3 color tokens on translate; outline mode chips, current one in cyan
+  - refresh readme screenshots and list the popup section in the scope table
+
+### Bug Fixes
+
+* **google-search**: theme the google.com homepage search box, suggestion dropdown and buttons so they match the results page ([634c303](https://github.com/marslo/google-gruvbox/commit/634c303f865cf88947d4d28f70730c9c7bc0e000))
+
 ## [2.1.0](https://github.com/marslo/google-gruvbox/compare/v2.0.2...v2.1.0) (2026-10-22)
 
 ### Features
