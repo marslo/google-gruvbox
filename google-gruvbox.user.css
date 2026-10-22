@@ -437,6 +437,36 @@
     border: 1px solid var(--orange) !important;
   }
 
+  /* google.com home: search box, suggestion dropdown and buttons ( `!important` + extra specificity to beat glass-style overrides ) */
+  .emcav .RNNXgb,
+  .UUbT9 .aajZCb {
+    background: var(--bg-primary) !important;
+    border-color: var(--cyan) !important;
+  }
+  .aajZCb .sbct:hover,
+  .aajZCb .sbhl {
+    background: var(--comment) !important;
+    border-color: transparent !important;
+  }
+  .aajZCb .JCHpcb {
+    color: var(--fg-secondary) !important;
+  }
+  .aajZCb .JCHpcb:hover {
+    color: var(--red) !important;
+  }
+  form input[type="submit"][name="btnK"],
+  form input[type="submit"][name="btnK"]:hover {
+    background: var(--blue) !important;
+    color: var(--on-accent) !important;
+    border: 1px solid var(--blue) !important;
+  }
+  form input[type="submit"][name="btnI"],
+  form input[type="submit"][name="btnI"]:hover {
+    background: var(--orange) !important;
+    color: var(--on-accent) !important;
+    border: 1px solid var(--orange) !important;
+  }
+
   .oIVYJb.FR7ZSc.k0Jjg .niO4u,
   .in7vHe.FR7ZSc.k0Jjg .niO4u,
   .rAzITb.FR7ZSc.k0Jjg .niO4u,
