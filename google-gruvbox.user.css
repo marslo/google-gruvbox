@@ -313,6 +313,14 @@
   .ZFiwCf:hover::after {
     background-color: color-mix(in srgb, var(--fg-primary) 10%, transparent) !important;
   }
+  /* sponsored results: section heading ( `.L8u9l` ) and advertiser name ( `.Aozhyc`, inline `color:#202124` ) */
+  .L8u9l {
+    color: var(--fg-primary) !important;
+  }
+  .Aozhyc,
+  .Aozhyc .OSrXXb {
+    color: var(--fg-secondary) !important;
+  }
 
   .g,
   .ssJ7i,
