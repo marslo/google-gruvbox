@@ -1,3 +1,11 @@
+## [2.2.1](https://github.com/marslo/google-gruvbox/compare/v2.2.0...v2.2.1) (2026-10-24)
+
+### Bug Fixes
+
+* **google-search**: make the sponsored results heading and advertiser names readable by overriding google's dark and inline text colors ([d1bdf15](https://github.com/marslo/google-gruvbox/commit/d1bdf156e8060a3bee1e1042d72c1ef319fbb641))
+  - set the `Sponsored results` heading ( `.L8u9l` ) to `--fg-primary`
+  - override the advertiser name's inline `color:#202124` ( `.Aozhyc` ) with `--fg-secondary`
+
 ## [2.2.0](https://github.com/marslo/google-gruvbox/compare/v2.1.0...v2.2.0) (2026-10-22)
 
 ### Features
