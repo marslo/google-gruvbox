@@ -1,3 +1,15 @@
+## [2.2.2](https://github.com/marslo/google-gruvbox/compare/v2.2.1...v2.2.2) (2026-10-28)
+
+### Bug Fixes
+
+* **google-search**, **translate**, **pre-commit**: theme the inline translate widget box, text, menu buttons and language picker with the palette, restore its font-size over ifonts, render translate output in the mono font ([5cee2e4](https://github.com/marslo/google-gruvbox/commit/5cee2e47e1c526321e213cff130e76d96e4f9b56))
+  - override hardcoded inline translate `#tw-target` bg / text colors
+  - dim placeholder, romanization and menu buttons to `--fg-secondary`
+  - theme the language picker panel, search box, fade and item states
+  - restore google's `pre.tw-ta` font-size over the ifonts small-mono size
+  - render translate output `.ryNqvb` in `--font-family-mono`
+  - bump the stylelint hook to node `26.12.1` and stylelint `17.16.0`
+
 ## [2.2.1](https://github.com/marslo/google-gruvbox/compare/v2.2.0...v2.2.1) (2026-10-24)
 
 ### Bug Fixes
