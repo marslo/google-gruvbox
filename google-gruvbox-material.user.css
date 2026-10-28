@@ -350,6 +350,66 @@
     line-height: 22px !important;
   }
 
+  /* translator in Google: target box bg / text, placeholder, romanization, menu buttons */
+  #tw-target {
+    background-color: var(--bg-third) !important;
+  }
+  #tw-target .tw-ta,
+  #tw-source-text-ta {
+    color: var(--fg-primary) !important;
+  }
+  #tw-ob:not(.tw-ets) #tw-target .tw-data-placeholder,
+  .tw-data-placeholder,
+  #tw-source-rmn.tw-data-text,
+  #tw-target-rmn.tw-data-text {
+    color: var(--fg-secondary) !important;
+  }
+  .tw-menu-btn {
+    color: var(--fg-secondary) !important;
+  }
+  .tw-menu-btn:not(.tw-menu-btn-disabled):hover {
+    color: var(--fg-primary) !important;
+  }
+  #tw-target .SD5Cxb {                                 /* search for this on Google */
+    background-color: var(--blue) !important;
+    color: var(--on-accent) !important;
+  }
+  /* restore google's own `pre.tw-ta` font-size over ifonts' `pre` small-mono size; font-family unchanged */
+  :is(#tw-source, #tw-target) pre.tw-ta.tw-text-large {
+    font-size: 28px !important;
+  }
+  :is(#tw-source, #tw-target) pre.tw-ta.tw-text-small {
+    font-size: var(--z3BFIe, 16px) !important;
+  }
+  :is(#tw-source, #tw-target) :is(.tw-lfl, .tw-hfl) > pre.tw-ta.tw-text-large {
+    font-size: var(--Ia70Xd, 28px) !important;
+  }
+  :is(#tw-source, #tw-target) pre.tw-ta:is(.tw-text-large, .tw-text-small) * {
+    font-size: inherit !important;
+  }
+  /* translator language picker: panel, search box, bottom fade, item hover / selected */
+  .zaokob {
+    background: var(--bg-primary) !important;
+  }
+  .tw-lp-search {
+    background-color: var(--bg-third) !important;
+    border-color: var(--bg-hover) !important;
+    color: var(--fg-primary) !important;
+  }
+  .language_list_languages.tw-ll-top::after {
+    background: linear-gradient( transparent, var(--bg-primary) ) !important;
+  }
+  .language_list_item {
+    color: var(--fg-primary) !important;
+  }
+  .tw-lliw:hover,
+  .tw-lliw:focus {
+    background: var(--bg-hover) !important;
+  }
+  .tw-lliw.item-selected .language_list_item {
+    color: var(--green) !important;
+  }
+
   #hdtb {
     border: none;
   }
@@ -846,6 +906,10 @@
   }
   .F0pQVc {
     font-family: var(--font-family-sans) !important;
+  }
+  /** output>text: same font as the input box **/
+  .ryNqvb {
+    font-family: var(--font-family-mono) !important;
   }
 
   /** textarea>button-selection **/
